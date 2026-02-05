@@ -15,10 +15,7 @@ const INSTAGRAM_USER = "Agro_southwest";
  *   y pega aquí la URL del iframe (ej. de Elfsight te dan una URL tipo https://widgets.elfsight.com/...).
  */
 const INSTAGRAM_POST_URLS: string[] = [
-  // Descomenta y reemplaza con tus enlaces reales (máx. 6):
-  // "https://www.instagram.com/p/XXXXXXXXX/",
-  // "https://www.instagram.com/p/YYYYYYYYY/",
-  // "https://www.instagram.com/p/ZZZZZZZZZ/",
+  "https://www.instagram.com/p/DUCWq-XjOwv/",
 ];
 
 /** Si usas un widget (Elfsight, SnapWidget, etc.), pega aquí la URL del iframe. Si está vacío no se usa. */
@@ -121,14 +118,14 @@ export default function InstagramSection() {
                     loading="lazy"
                   />
                 ) : hasPosts ? (
-                  <div className="grid w-full grid-cols-2 gap-2 sm:grid-cols-3">
+                  <div className={`grid w-full gap-4 ${INSTAGRAM_POST_URLS.length === 1 ? "grid-cols-1 place-items-center" : "grid-cols-2 sm:grid-cols-3"}`}>
                     {INSTAGRAM_POST_URLS.slice(0, 6).map((url) => (
                       <blockquote
                         key={url}
                         className="instagram-media instagram-media-rendered"
                         data-instgrm-permalink={url}
                         data-instgrm-version="14"
-                        style={{ minWidth: 320, maxWidth: 540 }}
+                        style={{ minWidth: INSTAGRAM_POST_URLS.length === 1 ? 400 : 320, maxWidth: INSTAGRAM_POST_URLS.length === 1 ? 540 : 540 }}
                       >
                         <a href={url} target="_blank" rel="noopener noreferrer">
                           Ver publicación en Instagram
