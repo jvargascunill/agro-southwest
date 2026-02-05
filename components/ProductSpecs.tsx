@@ -9,6 +9,7 @@ import {
   Sparkles,
   Leaf,
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
@@ -17,42 +18,27 @@ const fadeIn = {
   transition: { duration: 0.5 },
 };
 
-const specs = [
-  {
-    icon: Package,
-    label: "Calibres",
-    value: "95 - 165",
-  },
-  {
-    icon: Scale,
-    label: "Peso caja",
-    value: "15 kg netos",
-  },
-  {
-    icon: Clock,
-    label: "Vida útil",
-    value: "30-40 días (refrigerado)",
-  },
-  {
-    icon: Calendar,
-    label: "Disponibilidad",
-    value: "Abril a Septiembre (Contraestación)",
-  },
+const specKeys = [
+  { icon: Package, labelKey: "product.calibres", valueKey: "product.calibresValue" },
+  { icon: Scale, labelKey: "product.weight", valueKey: "product.weightValue" },
+  { icon: Clock, labelKey: "product.shelfLife", valueKey: "product.shelfLifeValue" },
+  { icon: Calendar, labelKey: "product.availability", valueKey: "product.availabilityValue" },
 ];
 
 export default function ProductSpecs() {
+  const { t } = useLanguage();
   return (
     <section id="productos" className="bg-accent-gray py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
-            Producto estrella
+            {t("product.label")}
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
-            Premium Chilean Lemons
+            {t("product.title")}
           </h2>
           <p className="mt-2 text-lg text-secondary/70">
-            <em>Citrus limon</em>
+            <em>{t("product.scientific")}</em>
           </p>
         </motion.div>
 
@@ -64,9 +50,9 @@ export default function ProductSpecs() {
           transition={{ duration: 0.5 }}
         >
           <div className="grid gap-8 sm:grid-cols-2">
-            {specs.map(({ icon: Icon, label, value }) => (
+            {specKeys.map(({ icon: Icon, labelKey, valueKey }) => (
               <div
-                key={label}
+                key={labelKey}
                 className="flex items-start gap-4 rounded-xl bg-accent-white p-4"
               >
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary-dark">
@@ -74,10 +60,10 @@ export default function ProductSpecs() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-secondary/70">
-                    {label}
+                    {t(labelKey)}
                   </p>
                   <p className="text-lg font-semibold text-secondary">
-                    {value}
+                    {t(valueKey)}
                   </p>
                 </div>
               </div>
@@ -88,13 +74,13 @@ export default function ProductSpecs() {
             <div className="flex items-center gap-2 rounded-full bg-primary/15 px-4 py-2">
               <Sparkles className="h-5 w-5 text-primary-dark" />
               <span className="text-sm font-medium text-secondary">
-                Piel lisa, color amarillo firme
+                {t("product.skin")}
               </span>
             </div>
             <div className="flex items-center gap-2 rounded-full bg-primary/15 px-4 py-2">
               <Leaf className="h-5 w-5 text-primary-dark" />
               <span className="text-sm font-medium text-secondary">
-                Sin semillas
+                {t("product.seedless")}
               </span>
             </div>
           </div>

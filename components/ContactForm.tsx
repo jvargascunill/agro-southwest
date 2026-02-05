@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Mail, Phone } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Preparado para Formspree: reemplazar YOUR_FORM_ID por el ID de tu formulario
 const FORMSPREE_URL = "https://formspree.io/f/YOUR_FORM_ID";
 
 export default function ContactForm() {
+  const { t } = useLanguage();
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">(
     "idle"
   );
@@ -43,13 +45,13 @@ export default function ContactForm() {
           viewport={{ once: true }}
         >
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
-            Escríbenos
+            {t("contact.label")}
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
-            Contacto
+            {t("contact.title")}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-secondary/80">
-            Cotizaciones y consultas. Respuesta en menos de 24 horas.
+            {t("contact.description")}
           </p>
         </motion.div>
 
@@ -62,7 +64,7 @@ export default function ContactForm() {
           >
             <div className="rounded-2xl border border-accent-gray bg-white p-8 shadow-sm">
               <h3 className="text-lg font-semibold text-secondary">
-                Datos de contacto
+                {t("footer.contact")}
               </h3>
               <ul className="mt-6 space-y-4">
                 <li className="flex items-center gap-3 text-secondary/80">
@@ -103,7 +105,7 @@ export default function ContactForm() {
                     htmlFor="name"
                     className="block text-sm font-medium text-secondary"
                   >
-                    Nombre / Empresa
+                    {t("contact.name")}
                   </label>
                   <input
                     id="name"
@@ -118,7 +120,7 @@ export default function ContactForm() {
                     htmlFor="email"
                     className="block text-sm font-medium text-secondary"
                   >
-                    Email
+                    {t("contact.email")}
                   </label>
                   <input
                     id="email"
@@ -134,7 +136,7 @@ export default function ContactForm() {
                   htmlFor="message"
                   className="block text-sm font-medium text-secondary"
                 >
-                  Mensaje
+                  {t("contact.message")}
                 </label>
                 <textarea
                   id="message"
@@ -154,24 +156,23 @@ export default function ContactForm() {
                   className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-secondary shadow-sm transition hover:bg-primary-dark disabled:opacity-70"
                 >
                   {status === "sending" ? (
-                    "Enviando..."
+                    t("contact.sending")
                   ) : (
                     <>
                       <Send className="h-4 w-4" />
-                      Enviar
+                      {t("contact.send")}
                     </>
                   )}
                 </button>
               </div>
               {status === "done" && (
                 <p className="mt-4 text-sm text-green-600">
-                  Mensaje enviado. Te contactaremos pronto.
+                  {t("contact.success")}
                 </p>
               )}
               {status === "error" && (
                 <p className="mt-4 text-sm text-red-600">
-                  Error al enviar. Intenta de nuevo o escribe a
-                  contacto@agrosouthwest.cl
+                  {t("contact.error")}
                 </p>
               )}
             </form>

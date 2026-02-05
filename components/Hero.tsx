@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
   return (
     <section
       id="inicio"
@@ -35,7 +37,7 @@ export default function Hero() {
           </span>
           <span className="text-white/60">·</span>
           <span className="rounded-full border border-white/40 bg-white/10 px-3 py-1 backdrop-blur-sm">
-            Exportación Chile
+            {t("hero.badgeChile")}
           </span>
         </motion.div>
 
@@ -45,7 +47,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          Fresh Citrus from Chile
+          {t("hero.title")}
         </motion.h1>
         <motion.p
           className="mt-4 text-xl font-medium text-primary sm:text-2xl"
@@ -53,7 +55,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
         >
-          Quality you can trust
+          {t("hero.subtitle")}
         </motion.p>
         <motion.p
           className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg"
@@ -61,8 +63,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         >
-          Expertos en exportación de limones frescos con certificación
-          GlobalG.A.P. y Systems Approach para el mundo.
+          {t("hero.description")}
         </motion.p>
         <motion.div
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
@@ -74,18 +75,17 @@ export default function Hero() {
             href="#productos"
             className="rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-secondary shadow-lg transition hover:bg-primary-light hover:shadow-xl"
           >
-            Ver producto
+            {t("hero.ctaProduct")}
           </a>
           <a
             href="#contacto"
             className="rounded-full border-2 border-white/80 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/15"
           >
-            Solicitar cotización
+            {t("hero.ctaContact")}
           </a>
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.a
         href="#nosotros"
         className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1 text-white/70 transition hover:text-white"
@@ -94,7 +94,7 @@ export default function Hero() {
         transition={{ delay: 1 }}
         aria-label="Ir a siguiente sección"
       >
-        <span className="text-xs uppercase tracking-widest">Descubre más</span>
+        <span className="text-xs uppercase tracking-widest">{t("hero.scrollMore")}</span>
         <ChevronDown className="h-6 w-6 animate-bounce" />
       </motion.a>
     </section>

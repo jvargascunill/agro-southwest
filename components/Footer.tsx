@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Mail, Phone, Instagram } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const INSTAGRAM_URL = "https://www.instagram.com/Agro_southwest/";
 
@@ -15,21 +18,22 @@ const quickLinks = [
 ];
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="border-t border-accent-gray bg-secondary text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
             <p className="text-lg font-bold uppercase tracking-tight">
-              Agro SouthWest SpA
+              {t("footer.company")}
             </p>
             <p className="mt-2 text-sm text-white/80">
-              Exportación de limones frescos desde Chile.
+              {t("footer.tagline")}
             </p>
           </div>
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-white/90">
-              Contacto
+              {t("footer.contact")}
             </p>
             <ul className="mt-3 space-y-2 text-sm text-white/80">
               <li>
@@ -43,11 +47,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+56912345678"
+                  href="tel:+56974265206"
                   className="flex items-center gap-2 transition hover:text-primary"
                 >
                   <Phone className="h-4 w-4" />
-                  +56 9 1234 5678
+                  +56 9 7426 5206
                 </a>
               </li>
               <li>
@@ -65,7 +69,7 @@ export default function Footer() {
           </div>
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-white/90">
-              Enlaces
+              {t("footer.links")}
             </p>
             <ul className="mt-3 flex flex-wrap gap-4 text-sm text-white/80">
               {quickLinks.map((link) => (
@@ -82,7 +86,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-10 border-t border-white/20 pt-8 text-center text-sm text-white/70">
-          © 2026 Agro SouthWest SpA. Todos los derechos reservados.
+          {t("footer.copyright")}
         </div>
       </div>
     </footer>

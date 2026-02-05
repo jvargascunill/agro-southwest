@@ -2,28 +2,13 @@
 
 import { motion } from "framer-motion";
 import { MessageCircle, FileCheck, Truck, PackageCheck } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const steps = [
-  {
-    icon: MessageCircle,
-    title: "Consulta",
-    description: "Cuéntanos tu necesidad: volumen, destino y fechas. Te respondemos en menos de 24 h.",
-  },
-  {
-    icon: FileCheck,
-    title: "Cotización",
-    description: "Recibes una propuesta formal con precios, condiciones y documentación fitosanitaria.",
-  },
-  {
-    icon: Truck,
-    title: "Logística",
-    description: "Coordinamos embarque terrestre o marítimo según destino, con trazabilidad total.",
-  },
-  {
-    icon: PackageCheck,
-    title: "Entrega",
-    description: "Tu producto llega en óptimas condiciones. Soporte post-entrega si lo necesitas.",
-  },
+const stepKeys = [
+  { icon: MessageCircle, titleKey: "process.step1", descKey: "process.step1Desc" },
+  { icon: FileCheck, titleKey: "process.step2", descKey: "process.step2Desc" },
+  { icon: Truck, titleKey: "process.step3", descKey: "process.step3Desc" },
+  { icon: PackageCheck, titleKey: "process.step4", descKey: "process.step4Desc" },
 ];
 
 const fadeIn = {
@@ -34,25 +19,26 @@ const fadeIn = {
 };
 
 export default function ProcessSection() {
+  const { t } = useLanguage();
   return (
     <section className="bg-accent-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
-            Cómo trabajamos
+            {t("process.label")}
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
-            Del campo a tu mercado
+            {t("process.title")}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-secondary/80">
-            Un proceso claro y profesional, con comunicación constante en cada etapa.
+            {t("process.description")}
           </p>
         </motion.div>
 
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step, i) => (
+          {stepKeys.map((step, i) => (
             <motion.div
-              key={step.title}
+              key={step.titleKey}
               className="group relative flex flex-col rounded-2xl border border-accent-gray bg-white p-8 shadow-sm transition hover:border-primary/30 hover:shadow-lg"
               {...fadeIn}
             >
@@ -63,10 +49,10 @@ export default function ProcessSection() {
                 <step.icon className="h-7 w-7" />
               </div>
               <h3 className="mt-5 text-xl font-semibold text-secondary">
-                {step.title}
+                {t(step.titleKey)}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-secondary/80">
-                {step.description}
+                {t(step.descKey)}
               </p>
             </motion.div>
           ))}

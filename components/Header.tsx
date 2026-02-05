@@ -3,16 +3,24 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Instagram } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const INSTAGRAM_URL = "https://www.instagram.com/Agro_southwest/";
-import { motion, AnimatePresence } from "framer-motion";
-
 const LOGO_PATH = "/logo.png";
 
-/**
- * Logo que ocupa todo el rectángulo del header (sin parpadeo).
- * object-cover para llenar el espacio; object-left para alinear contenido.
- */
+const navLinks = [
+  { href: "#inicio", key: "nav.inicio" },
+  { href: "#nosotros", key: "nav.nosotros" },
+  { href: "#productos", key: "nav.productos" },
+  { href: "#mercados", key: "nav.mercados" },
+  { href: "#sostenibilidad", key: "nav.sostenibilidad" },
+  { href: "#instagram", key: "nav.instagram" },
+  { href: "#faq", key: "nav.faq" },
+  { href: "#contacto", key: "nav.contacto" },
+];
+
 function Logo() {
   return (
     <span className="relative flex h-14 w-44 flex-shrink-0 sm:h-16 sm:w-52 md:w-60 lg:w-72">
@@ -28,19 +36,9 @@ function Logo() {
   );
 }
 
-const navLinks = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#productos", label: "Productos" },
-  { href: "#mercados", label: "Mercados" },
-  { href: "#sostenibilidad", label: "Sostenibilidad" },
-  { href: "#instagram", label: "Instagram" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contacto", label: "Contacto" },
-];
-
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
 
   const goToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -57,19 +55,20 @@ export default function Header() {
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-secondary/90 transition hover:text-primary-dark"
             >
-              {link.label}
+              {t(link.key)}
             </Link>
           ))}
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
+          <LanguageSwitcher />
           <a
             href={INSTAGRAM_URL}
             target="_blank"
@@ -83,7 +82,7 @@ export default function Header() {
             href="#contacto"
             className="inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-secondary shadow-sm transition hover:bg-primary-dark hover:text-secondary-dark"
           >
-            Cotizar / Quote
+            {t("nav.cotizar")}
           </Link>
         </div>
 
@@ -106,6 +105,9 @@ export default function Header() {
             className="overflow-hidden border-t border-accent-gray bg-accent-white md:hidden"
           >
             <nav className="flex flex-col gap-1 px-4 py-4">
+              <div className="mb-2 flex justify-end">
+                <LanguageSwitcher />
+              </div>
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -113,7 +115,7 @@ export default function Header() {
                   className="rounded-lg px-3 py-2 text-sm font-medium text-secondary hover:bg-accent-gray"
                   onClick={() => setOpen(false)}
                 >
-                  {link.label}
+                  {t(link.key)}
                 </Link>
               ))}
               <a
@@ -131,7 +133,7 @@ export default function Header() {
                 className="mt-2 rounded-full bg-primary px-4 py-2.5 text-center text-sm font-semibold text-secondary"
                 onClick={() => setOpen(false)}
               >
-                Cotizar / Quote
+                {t("nav.cotizar")}
               </Link>
             </nav>
           </motion.div>

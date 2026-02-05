@@ -3,32 +3,18 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const faqs = [
-  {
-    question: "¿Cuál es el volumen mínimo de compra?",
-    answer:
-      "Trabajamos con pedidos que se adapten a tu operación. Contáctanos con tu volumen estimado y destino para darte una cotización a medida.",
-  },
-  {
-    question: "¿Entregan documentación fitosanitaria y certificados?",
-    answer:
-      "Sí. Todas las exportaciones incluyen la documentación requerida (Systems Approach SAG/USDA cuando aplica, certificados de origen, etc.). GlobalG.A.P. respalda nuestra trazabilidad.",
-  },
-  {
-    question: "¿En qué temporada están disponibles los limones?",
-    answer:
-      "Nuestra temporada de exportación va de abril a septiembre (contraestación para el Hemisferio Norte). Es la ventana óptima de calidad desde la zona central y sur de Chile.",
-  },
-  {
-    question: "¿Cómo se coordina la logística hasta mi país?",
-    answer:
-      "Para el Cono Sur (Argentina, Uruguay) usamos logística terrestre. Para Brasil y Panamá, marítima. Te acompañamos en la coordinación y te mantenemos informado del estado del embarque.",
-  },
+const faqKeys = [
+  { qKey: "faq.q1", aKey: "faq.a1" },
+  { qKey: "faq.q2", aKey: "faq.a2" },
+  { qKey: "faq.q3", aKey: "faq.a3" },
+  { qKey: "faq.q4", aKey: "faq.a4" },
 ];
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { t } = useLanguage();
 
   return (
     <section id="faq" className="bg-accent-white py-20 sm:py-28">
@@ -43,12 +29,12 @@ export default function FAQSection() {
             Preguntas frecuentes
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
-            Resolvemos tus dudas
+            {t("faq.title")}
           </h2>
         </motion.div>
 
         <ul className="mt-12 space-y-3">
-          {faqs.map((faq, i) => (
+          {faqKeys.map((faq, i) => (
             <motion.li
               key={i}
               initial={{ opacity: 0, y: 12 }}
@@ -62,7 +48,7 @@ export default function FAQSection() {
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-medium text-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset"
               >
-                <span className="text-sm sm:text-base">{faq.question}</span>
+                <span className="text-sm sm:text-base">{t(faq.qKey)}</span>
                 <ChevronDown
                   className={`h-5 w-5 flex-shrink-0 text-secondary/70 transition-transform ${
                     openIndex === i ? "rotate-180" : ""
@@ -79,7 +65,7 @@ export default function FAQSection() {
                     className="overflow-hidden"
                   >
                     <p className="border-t border-accent-gray px-5 py-4 text-sm leading-relaxed text-secondary/80">
-                      {faq.answer}
+                      {t(faq.aKey)}
                     </p>
                   </motion.div>
                 )}
@@ -89,9 +75,9 @@ export default function FAQSection() {
         </ul>
 
         <p className="mt-8 text-center text-sm text-secondary/70">
-          ¿Más preguntas?{" "}
+          {t("faq.moreQuestions")}{" "}
           <a href="#contacto" className="font-medium text-primary-dark underline decoration-2 underline-offset-2 hover:no-underline">
-            Escríbenos
+            {t("faq.writeUs")}
           </a>
         </p>
       </div>

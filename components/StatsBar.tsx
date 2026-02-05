@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import { Globe, Shield, Calendar } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const stats = [
-  { value: "4+", label: "Mercados", icon: Globe },
-  { value: "2", label: "Certificaciones clave", sublabel: "GlobalG.A.P. · Systems Approach", icon: Shield },
-  { value: "Abril–Sept", label: "Temporada exportación", sublabel: "Contraestación", icon: Calendar },
+  { value: "4+", labelKey: "stats.markets", sublabelKey: null, icon: Globe },
+  { value: "2", labelKey: "stats.certs", sublabelKey: "stats.certsSublabel", icon: Shield },
+  { value: "Abril–Sept", labelKey: "stats.season", sublabelKey: "stats.seasonSublabel", icon: Calendar },
 ];
 
 const fadeIn = {
@@ -17,13 +18,14 @@ const fadeIn = {
 };
 
 export default function StatsBar() {
+  const { t } = useLanguage();
   return (
     <section className="relative z-10 -mt-1 border-b border-white/10 bg-secondary py-8 sm:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 sm:grid-cols-3">
-          {stats.map(({ value, label, sublabel, icon: Icon }) => (
+          {stats.map(({ value, labelKey, sublabelKey, icon: Icon }) => (
             <motion.div
-              key={label}
+              key={labelKey}
               className="flex flex-col items-center text-center sm:border-r sm:border-white/10 sm:last:border-r-0"
               {...fadeIn}
             >
@@ -33,9 +35,9 @@ export default function StatsBar() {
               <p className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 {value}
               </p>
-              <p className="mt-1 text-sm font-medium text-white/90">{label}</p>
-              {sublabel && (
-                <p className="mt-0.5 text-xs text-white/70">{sublabel}</p>
+              <p className="mt-1 text-sm font-medium text-white/90">{t(labelKey)}</p>
+              {sublabelKey && (
+                <p className="mt-0.5 text-xs text-white/70">{t(sublabelKey)}</p>
               )}
             </motion.div>
           ))}

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Ship, Truck, MapPin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
@@ -11,31 +12,31 @@ const fadeIn = {
 };
 
 const markets = [
-  { name: "Argentina", mode: "Terrestre", icon: Truck },
-  { name: "Uruguay", mode: "Terrestre", icon: Truck },
-  { name: "Brasil", mode: "Marítima", icon: Ship },
-  { name: "Panamá", mode: "Marítima", icon: Ship },
+  { name: "Argentina", modeKey: "markets.modeTerrestrial", icon: Truck },
+  { name: "Uruguay", modeKey: "markets.modeTerrestrial", icon: Truck },
+  { name: "Brasil", modeKey: "markets.modeMaritime", icon: Ship },
+  { name: "Panamá", modeKey: "markets.modeMaritime", icon: Ship },
 ];
 
 export default function Markets() {
+  const { t } = useLanguage();
   return (
     <section id="mercados" className="bg-accent-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
-            Destinos
+            {t("markets.label")}
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
-            Conectando Chile con el Mundo
+            {t("markets.title")}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-secondary/80">
-            Mercados prioritarios con logística terrestre en el Cono Sur y
-            marítima hacia Brasil y Panamá.
+            {t("markets.description")}
           </p>
         </motion.div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {markets.map(({ name, mode, icon: Icon }) => (
+          {markets.map(({ name, modeKey, icon: Icon }) => (
             <motion.div
               key={name}
               className="flex flex-col items-center rounded-2xl border border-accent-gray bg-white p-8 shadow-sm transition hover:border-primary/30 hover:shadow-md"
@@ -49,7 +50,7 @@ export default function Markets() {
               </h3>
               <p className="mt-1 flex items-center gap-1.5 text-sm text-secondary/70">
                 <MapPin className="h-4 w-4" />
-                {mode}
+                {t(modeKey)}
               </p>
             </motion.div>
           ))}
@@ -60,11 +61,11 @@ export default function Markets() {
           {...fadeIn}
         >
           <span className="text-sm font-medium text-secondary/80">
-            Cono Sur: logística terrestre
+            {t("markets.terrestrial")}
           </span>
           <span className="text-accent-gray-dark">•</span>
           <span className="text-sm font-medium text-secondary/80">
-            Brasil / Panamá: logística marítima
+            {t("markets.maritime")}
           </span>
         </motion.div>
       </div>

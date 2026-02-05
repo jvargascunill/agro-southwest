@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Script from "next/script";
 import { motion } from "framer-motion";
 import { Instagram, ExternalLink } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const INSTAGRAM_URL = "https://www.instagram.com/Agro_southwest/";
 const INSTAGRAM_USER = "Agro_southwest";
@@ -31,6 +32,7 @@ const fadeIn = {
 };
 
 export default function InstagramSection() {
+  const { t } = useLanguage();
   const hasPosts = INSTAGRAM_POST_URLS.length > 0;
   const hasWidget = Boolean(INSTAGRAM_FEED_WIDGET_URL);
   const showRealFeed = hasPosts || hasWidget;
@@ -61,13 +63,13 @@ export default function InstagramSection() {
         <motion.div className="text-center" {...fadeIn}>
           <div className="inline-flex items-center justify-center gap-2 rounded-full bg-primary/15 px-4 py-1.5 text-sm font-medium text-primary-dark">
             <Instagram className="h-4 w-4" />
-            Síguenos
+            {t("instagram.follow")}
           </div>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
-            Nuestro Instagram
+            {t("instagram.title")}
           </h2>
           <p className="mx-auto mt-2 max-w-md text-lg text-secondary/80">
-            Conecta con nosotros y descubre nuestro día a día en @{INSTAGRAM_USER}
+            {t("instagram.description")}
           </p>
         </motion.div>
 
@@ -87,7 +89,7 @@ export default function InstagramSection() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-secondary/70">
-                      Perfil oficial
+                      {t("instagram.profile")}
                     </p>
                     <p className="text-xl font-bold text-secondary">
                       @{INSTAGRAM_USER}
@@ -103,7 +105,7 @@ export default function InstagramSection() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-secondary shadow-sm transition hover:bg-primary-dark"
                 >
-                  Ver perfil en Instagram
+                  {t("instagram.verPerfil")}
                   <ExternalLink className="h-4 w-4" />
                 </a>
               </div>
