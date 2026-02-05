@@ -139,10 +139,10 @@ export default function ContactForm() {
                 <li className="flex items-center gap-3 text-secondary/80">
                   <Mail className="h-5 w-5 flex-shrink-0 text-primary-dark" />
                   <a
-                    href="mailto:contacto@agrosouthwest.cl"
+                    href="mailto:contacto@agrosouthwest.com"
                     className="hover:text-primary-dark"
                   >
-                    contacto@agrosouthwest.cl
+                    contacto@agrosouthwest.com
                   </a>
                 </li>
                 <li className="flex items-center gap-3 text-secondary/80">

@@ -28,10 +28,10 @@ export default function CTASection() {
               {t("cta.button")}
             </Link>
             <a
-              href="mailto:contacto@agrosouthwest.cl"
+              href="mailto:contacto@agrosouthwest.com"
               className="rounded-full border-2 border-white/60 px-8 py-4 text-base font-semibold text-white transition hover:bg-white/10"
             >
-              contacto@agrosouthwest.cl
+              contacto@agrosouthwest.com
             </a>
           </div>
         </motion.div>

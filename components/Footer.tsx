@@ -51,11 +51,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:contacto@agrosouthwest.cl"
+                  href="mailto:contacto@agrosouthwest.com"
                   className="flex items-center gap-2 transition hover:text-primary"
                 >
                   <Mail className="h-4 w-4" />
-                  contacto@agrosouthwest.cl
+                  contacto@agrosouthwest.com
                 </a>
               </li>
               <li>
