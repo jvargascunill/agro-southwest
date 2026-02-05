@@ -10,17 +10,17 @@ const LOGO_PATH = "/logo.png";
 
 function Logo() {
   const [useFallback, setUseFallback] = useState(false);
-  if (useFallback) return <span className="h-10 w-10 flex-shrink-0" />;
+  if (useFallback) return <span className="h-14 w-32 flex-shrink-0" aria-hidden />;
   return (
-    <span className="relative h-10 w-10 flex-shrink-0">
+    <span className="relative flex h-14 w-36 flex-shrink-0 sm:h-16 sm:w-40">
       <Image
         src={LOGO_PATH}
-        alt=""
-        width={40}
-        height={40}
-        className="object-contain"
+        alt="Agro SouthWest"
+        fill
+        className="object-contain object-left"
         unoptimized
         onError={() => setUseFallback(true)}
+        sizes="(max-width: 640px) 144px, 160px"
       />
     </span>
   );
@@ -41,11 +41,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-accent-gray bg-accent-white/95 backdrop-blur-sm">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/#inicio" className="flex items-center gap-2">
+        <Link href="/#inicio" className="flex items-center">
           <Logo />
-          <span className="text-lg font-bold uppercase tracking-tight text-secondary">
-            AGRO SOUTHWEST
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
