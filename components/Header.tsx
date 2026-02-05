@@ -12,10 +12,10 @@ const LOGO_PATH = "/logo.png";
 
 function Logo() {
   const [useFallback, setUseFallback] = useState(false);
-  // ~3x el tamaño original (56×144 → 168×432)
-  if (useFallback) return <span className="h-[5.5rem] w-[13rem] flex-shrink-0 sm:h-[7rem] sm:w-[18rem]" aria-hidden />;
+  // Logo ocupa casi toda la altura de la barra (calce justo), ancho amplio
+  if (useFallback) return <span className="h-10 w-32 flex-shrink-0 sm:h-12 sm:w-40" aria-hidden />;
   return (
-    <span className="relative flex h-[5.5rem] w-[13rem] flex-shrink-0 sm:h-[7rem] sm:w-[18rem] md:h-[8rem] md:w-[20rem]">
+    <span className="relative flex h-10 w-32 flex-shrink-0 sm:h-12 sm:w-44 md:h-[3.25rem] md:w-52">
       <Image
         src={LOGO_PATH}
         alt="Agro SouthWest"
@@ -23,7 +23,7 @@ function Logo() {
         className="object-contain object-left"
         unoptimized
         onError={() => setUseFallback(true)}
-        sizes="(max-width: 640px) 208px, (max-width: 768px) 288px, 320px"
+        sizes="(max-width: 640px) 128px, (max-width: 768px) 176px, 208px"
       />
     </span>
   );
@@ -35,6 +35,7 @@ const navLinks = [
   { href: "#productos", label: "Productos" },
   { href: "#mercados", label: "Mercados" },
   { href: "#sostenibilidad", label: "Sostenibilidad" },
+  { href: "#instagram", label: "Instagram" },
   { href: "#contacto", label: "Contacto" },
 ];
 
@@ -47,7 +48,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-accent-gray bg-accent-white/95 backdrop-blur-sm">
-      <div className="mx-auto flex min-h-[5.5rem] max-w-7xl items-center justify-between gap-4 py-2 px-4 sm:min-h-[7rem] sm:py-3 sm:px-6 md:min-h-[8rem] md:py-4 lg:px-8">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 sm:gap-4 sm:px-6 lg:px-8">
         <Link
           href="/#inicio"
           onClick={goToTop}
