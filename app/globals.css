@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #b8d430;
+  --primary-light: #d4e87a;
+  --primary-dark: #9bb82a;
+  --secondary: #1a3d2e;
+  --secondary-light: #2d5a47;
+  --accent-white: #fafbf9;
+  --accent-gray: #e8ebe6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-accent-white text-secondary antialiased;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
