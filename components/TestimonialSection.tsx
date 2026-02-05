@@ -14,7 +14,7 @@ type Testimonial = {
   locationEn: string;
   locationZh: string;
   locationEs: string;
-  lang: "en" | "zh";
+  lang: "en" | "zh" | "es";
 };
 
 const testimonials: Testimonial[] = [
@@ -46,7 +46,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: "3",
-    lang: "en",
+    lang: "es",
     quoteEn:
       "We have been sourcing lemons from Agro SouthWest for two seasons. Reliable quality, on-time delivery, and a professional team. Recommended for anyone in the Southern Cone looking for counter-season supply.",
     quoteZh: "",
@@ -81,19 +81,22 @@ const fadeIn = {
 
 function getTestimonialContent(
   t: Testimonial,
-  locale: "es" | "en" | "zh",
   showSpanish: Record<string, boolean>
-) {
+): { quote: string; location: string; lang: string } {
   const useSpanish = showSpanish[t.id];
-  if (useSpanish) return { quote: t.quoteEs, location: t.locationEs };
-  if (locale === "es") return { quote: t.quoteEs, location: t.locationEs };
-  if (locale === "zh" && t.quoteZh)
-    return { quote: t.quoteZh, location: t.locationZh };
-  return { quote: t.quoteEn || t.quoteEs, location: t.locationEn || t.locationEs };
+  if (useSpanish) return { quote: t.quoteEs, location: t.locationEs, lang: "es" };
+  if (t.lang === "es") return { quote: t.quoteEs, location: t.locationEs, lang: "es" };
+  if (t.lang === "zh" && t.quoteZh)
+    return { quote: t.quoteZh, location: t.locationZh, lang: "zh" };
+  return {
+    quote: t.quoteEn || t.quoteEs,
+    location: t.locationEn || t.locationEs,
+    lang: "en",
+  };
 }
 
 export default function TestimonialSection() {
-  const { locale, t } = useLanguage();
+  const { t } = useLanguage();
   const [showSpanish, setShowSpanish] = useState<Record<string, boolean>>({});
 
   const toggleSpanish = (id: string) => {
@@ -101,7 +104,6 @@ export default function TestimonialSection() {
   };
 
   const needsTranslateButton = (testimonial: Testimonial) => {
-    if (locale === "es") return false;
     return testimonial.quoteEs.length > 0;
   };
 
@@ -117,11 +119,30 @@ export default function TestimonialSection() {
           </h2>
         </motion.div>
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-2">
+        <div className="flex flex-wrap justify-center gap-3 pb-6">
+          <button
+            type="button"
+            onClick={() => {
+              const allInSpanish = testimonials.every((x) => showSpanish[x.id] || x.lang === "es");
+              if (allInSpanish) {
+                setShowSpanish({});
+              } else {
+                setShowSpanish(testimonials.reduce<Record<string, boolean>>((acc, x) => ({ ...acc, [x.id]: true }), {}));
+              }
+            }}
+            className="inline-flex items-center gap-2 rounded-full border border-primary-dark/30 bg-white px-4 py-2 text-sm font-medium text-primary-dark shadow-sm transition hover:bg-primary/10"
+          >
+            <Languages className="h-4 w-4" />
+            {testimonials.every((x) => showSpanish[x.id] || x.lang === "es")
+              ? t("testimonial.showAllOriginals")
+              : t("testimonial.translateAllToSpanish")}
+          </button>
+        </div>
+
+        <div className="mt-8 grid gap-8 sm:grid-cols-2">
           {testimonials.map((testimonial) => {
-            const { quote, location } = getTestimonialContent(
+            const { quote, location, lang } = getTestimonialContent(
               testimonial,
-              locale,
               showSpanish
             );
             const showTranslate = needsTranslateButton(testimonial);
@@ -136,7 +157,7 @@ export default function TestimonialSection() {
                 {...fadeIn}
               >
                 <Quote className="absolute left-6 top-6 h-10 w-10 text-primary/20" />
-                <blockquote className="relative pt-4">
+                <blockquote className="relative pt-4" lang={lang}>
                   <p className="text-base leading-relaxed text-secondary sm:text-lg">
                     {quote}
                   </p>
