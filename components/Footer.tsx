@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Instagram } from "lucide-react";
+
+const INSTAGRAM_URL = "https://www.instagram.com/Agro_southwest/";
 
 const quickLinks = [
   { href: "#inicio", label: "Inicio" },
@@ -44,6 +46,17 @@ export default function Footer() {
                 >
                   <Phone className="h-4 w-4" />
                   +56 9 1234 5678
+                </a>
+              </li>
+              <li>
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 transition hover:text-primary"
+                >
+                  <Instagram className="h-4 w-4" />
+                  @Agro_southwest
                 </a>
               </li>
             </ul>
