@@ -10,6 +10,7 @@ const quickLinks = [
   { href: "#mercados", label: "Mercados" },
   { href: "#sostenibilidad", label: "Sostenibilidad" },
   { href: "#instagram", label: "Instagram" },
+  { href: "#faq", label: "FAQ" },
   { href: "#contacto", label: "Contacto" },
 ];
 

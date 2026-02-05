@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X, Instagram } from "lucide-react";
 
 const INSTAGRAM_URL = "https://www.instagram.com/Agro_southwest/";
@@ -10,20 +9,23 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const LOGO_PATH = "/logo.png";
 
+/**
+ * Logo con <img> nativo para evitar parpadeo: Next.js Image con onError
+ * puede cambiar de estado tras la carga y provocar pequeño → grande → pequeño.
+ * Contenedor de tamaño fijo y sin cambio de estado visual.
+ */
 function Logo() {
-  const [useFallback, setUseFallback] = useState(false);
-  // Logo ~4x más grande: ocupa el 100% de la altura de la barra (sin crecer la barra) y ancho amplio
-  if (useFallback) return <span className="h-full min-h-[2.5rem] w-48 flex-shrink-0 sm:w-64 md:w-80" aria-hidden />;
   return (
     <span className="relative flex h-full min-h-[2.5rem] w-48 flex-shrink-0 sm:w-64 md:w-80 lg:w-96">
-      <Image
+      <img
         src={LOGO_PATH}
         alt="Agro SouthWest"
-        fill
-        className="object-contain object-left"
-        unoptimized
-        onError={() => setUseFallback(true)}
-        sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
+        width={384}
+        height={64}
+        className="h-full w-full object-contain object-left"
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
       />
     </span>
   );
@@ -36,6 +38,7 @@ const navLinks = [
   { href: "#mercados", label: "Mercados" },
   { href: "#sostenibilidad", label: "Sostenibilidad" },
   { href: "#instagram", label: "Instagram" },
+  { href: "#faq", label: "FAQ" },
   { href: "#contacto", label: "Contacto" },
 ];
 

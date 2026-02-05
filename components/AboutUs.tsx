@@ -18,7 +18,10 @@ export default function AboutUs() {
           className="text-center"
           {...fadeIn}
         >
-          <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
+            Quiénes somos
+          </p>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
             Sobre Nosotros
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-secondary/80">

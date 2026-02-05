@@ -33,7 +33,10 @@ export default function Certifications() {
     <section id="sostenibilidad" className="bg-secondary py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+            Confianza
+          </p>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Calidad y Certificaciones
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/85">

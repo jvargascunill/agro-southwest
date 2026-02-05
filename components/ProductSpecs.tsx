@@ -45,7 +45,10 @@ export default function ProductSpecs() {
     <section id="productos" className="bg-accent-gray py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
-          <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
+            Producto estrella
+          </p>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
             Premium Chilean Lemons
           </h2>
           <p className="mt-2 text-lg text-secondary/70">

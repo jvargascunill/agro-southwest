@@ -42,11 +42,14 @@ export default function ContactForm() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
+            Escríbenos
+          </p>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
             Contacto
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-secondary/80">
-            Escríbenos para cotizaciones o consultas. Te respondemos a la brevedad.
+            Cotizaciones y consultas. Respuesta en menos de 24 horas.
           </p>
         </motion.div>
 

@@ -20,6 +20,11 @@ body {
   @apply bg-accent-white text-secondary antialiased;
 }
 
+/* Section label: small caps, brand color */
+.section-label {
+  @apply text-sm font-semibold uppercase tracking-widest text-primary-dark;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
