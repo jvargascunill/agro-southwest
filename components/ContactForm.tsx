@@ -2,11 +2,15 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, Phone } from "lucide-react";
+import { Send, Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // Preparado para Formspree: reemplazar YOUR_FORM_ID por el ID de tu formulario
 const FORMSPREE_URL = "https://formspree.io/f/YOUR_FORM_ID";
+
+const OFFICE_ADDRESS = "Ahumada 131, of 913, Santiago, Chile";
+const GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(OFFICE_ADDRESS)}`;
+const GOOGLE_MAPS_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(OFFICE_ADDRESS)}&z=16&output=embed`;
 
 export default function ContactForm() {
   const { t } = useLanguage();
@@ -55,6 +59,47 @@ export default function ContactForm() {
           </p>
         </motion.div>
 
+        {/* Mapa Oficina */}
+        <motion.div
+          className="mx-auto mt-12 max-w-5xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="rounded-2xl border border-accent-gray overflow-hidden bg-white shadow-sm">
+            <div className="flex items-center justify-between gap-4 border-b border-accent-gray bg-accent-gray/30 px-4 py-3">
+              <div className="flex items-center gap-2">
+                <MapPin className="h-5 w-5 text-primary-dark" />
+                <span className="font-semibold text-secondary">{t("contact.office")}</span>
+              </div>
+              <a
+                href={GOOGLE_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-primary-dark hover:underline"
+              >
+                {t("contact.viewOnMap")}
+              </a>
+            </div>
+            <div className="aspect-[16/9] w-full min-h-[240px]">
+              <iframe
+                title={t("contact.office")}
+                src={GOOGLE_MAPS_EMBED}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-full w-full"
+              />
+            </div>
+            <p className="px-4 py-2 text-sm text-secondary/80">
+              {t("contact.address")}
+            </p>
+          </div>
+        </motion.div>
+
         <div className="mx-auto mt-14 grid max-w-5xl gap-12 lg:grid-cols-5">
           <motion.div
             className="lg:col-span-2"
@@ -67,6 +112,30 @@ export default function ContactForm() {
                 {t("footer.contact")}
               </h3>
               <ul className="mt-6 space-y-4">
+                <li className="flex items-start gap-3 text-secondary/80">
+                  <MapPin className="h-5 w-5 flex-shrink-0 text-primary-dark mt-0.5" />
+                  <div>
+                    <p className="font-medium text-secondary">{t("contact.office")}</p>
+                    <a
+                      href={GOOGLE_MAPS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary-dark underline"
+                    >
+                      {t("contact.address")}
+                    </a>
+                    <p className="mt-1">
+                      <a
+                        href={GOOGLE_MAPS_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-primary-dark hover:underline"
+                      >
+                        {t("contact.viewOnMap")}
+                      </a>
+                    </p>
+                  </div>
+                </li>
                 <li className="flex items-center gap-3 text-secondary/80">
                   <Mail className="h-5 w-5 flex-shrink-0 text-primary-dark" />
                   <a
@@ -79,10 +148,10 @@ export default function ContactForm() {
                 <li className="flex items-center gap-3 text-secondary/80">
                   <Phone className="h-5 w-5 flex-shrink-0 text-primary-dark" />
                   <a
-                    href="tel:+56912345678"
+                    href="tel:+56974265206"
                     className="hover:text-primary-dark"
                   >
-                    +56 9 1234 5678
+                    +56 9 7426 5206
                   </a>
                 </li>
               </ul>

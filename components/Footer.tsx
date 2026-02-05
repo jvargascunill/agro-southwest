@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Phone, Instagram } from "lucide-react";
+import { Mail, Phone, Instagram, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const INSTAGRAM_URL = "https://www.instagram.com/Agro_southwest/";
+const OFFICE_ADDRESS = "Ahumada 131, of 913, Santiago, Chile";
+const GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(OFFICE_ADDRESS)}`;
 
 const quickLinks = [
   { href: "#inicio", label: "Inicio" },
@@ -36,6 +38,17 @@ export default function Footer() {
               {t("footer.contact")}
             </p>
             <ul className="mt-3 space-y-2 text-sm text-white/80">
+              <li>
+                <a
+                  href={GOOGLE_MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 transition hover:text-primary"
+                >
+                  <MapPin className="h-4 w-4 flex-shrink-0" />
+                  <span>{t("contact.office")}: {t("contact.address")}</span>
+                </a>
+              </li>
               <li>
                 <a
                   href="mailto:contacto@agrosouthwest.cl"
