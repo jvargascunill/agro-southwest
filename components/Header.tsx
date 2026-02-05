@@ -10,19 +10,16 @@ import { motion, AnimatePresence } from "framer-motion";
 const LOGO_PATH = "/logo.png";
 
 /**
- * Logo con <img> nativo para evitar parpadeo: Next.js Image con onError
- * puede cambiar de estado tras la carga y provocar pequeño → grande → pequeño.
- * Contenedor de tamaño fijo y sin cambio de estado visual.
+ * Logo que ocupa todo el rectángulo del header (sin parpadeo).
+ * object-cover para llenar el espacio; object-left para alinear contenido.
  */
 function Logo() {
   return (
-    <span className="relative flex h-full min-h-[2.5rem] w-48 flex-shrink-0 sm:w-64 md:w-80 lg:w-96">
+    <span className="relative flex h-14 w-44 flex-shrink-0 sm:h-16 sm:w-52 md:w-60 lg:w-72">
       <img
         src={LOGO_PATH}
         alt="Agro SouthWest"
-        width={384}
-        height={64}
-        className="h-full w-full object-contain object-left"
+        className="h-full w-full object-cover object-left"
         loading="eager"
         fetchPriority="high"
         decoding="async"
@@ -55,7 +52,7 @@ export default function Header() {
         <Link
           href="/#inicio"
           onClick={goToTop}
-          className="flex h-full min-w-0 items-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+          className="flex min-w-0 items-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
         >
           <Logo />
         </Link>
