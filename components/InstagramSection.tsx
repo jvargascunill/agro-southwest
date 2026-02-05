@@ -1,10 +1,27 @@
 "use client";
 
+import { useEffect } from "react";
+import Script from "next/script";
 import { motion } from "framer-motion";
 import { Instagram, ExternalLink } from "lucide-react";
 
 const INSTAGRAM_URL = "https://www.instagram.com/Agro_southwest/";
 const INSTAGRAM_USER = "Agro_southwest";
+
+/**
+ * Opción A – Fotos reales por URLs: pega 3–6 enlaces de posts (en Instagram: foto → ⋮ → Copiar enlace).
+ * Opción B – Feed por usuario: crea un widget gratis en elfsight.com o snapwidget.com con @Agro_southwest
+ *   y pega aquí la URL del iframe (ej. de Elfsight te dan una URL tipo https://widgets.elfsight.com/...).
+ */
+const INSTAGRAM_POST_URLS: string[] = [
+  // Descomenta y reemplaza con tus enlaces reales (máx. 6):
+  // "https://www.instagram.com/p/XXXXXXXXX/",
+  // "https://www.instagram.com/p/YYYYYYYYY/",
+  // "https://www.instagram.com/p/ZZZZZZZZZ/",
+];
+
+/** Si usas un widget (Elfsight, SnapWidget, etc.), pega aquí la URL del iframe. Si está vacío no se usa. */
+const INSTAGRAM_FEED_WIDGET_URL = "";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -14,11 +31,32 @@ const fadeIn = {
 };
 
 export default function InstagramSection() {
+  const hasPosts = INSTAGRAM_POST_URLS.length > 0;
+  const hasWidget = Boolean(INSTAGRAM_FEED_WIDGET_URL);
+  const showRealFeed = hasPosts || hasWidget;
+
+  const processEmbeds = () => {
+    const w = typeof window !== "undefined" ? window : null;
+    const instgrm = w && (w as unknown as { instgrm?: { Embeds?: { process: () => void } } }).instgrm;
+    instgrm?.Embeds?.process?.();
+  };
+
+  useEffect(() => {
+    if (hasPosts) processEmbeds();
+  }, [hasPosts]);
+
   return (
     <section
       id="instagram"
       className="bg-accent-white py-20 sm:py-28"
     >
+      {hasPosts && (
+        <Script
+          src="https://www.instagram.com/embed.js"
+          strategy="lazyOnload"
+          onLoad={processEmbeds}
+        />
+      )}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
           <div className="inline-flex items-center justify-center gap-2 rounded-full bg-primary/15 px-4 py-1.5 text-sm font-medium text-primary-dark">
@@ -40,10 +78,8 @@ export default function InstagramSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          {/* Tarjeta del perfil: enlace principal y preview embebido */}
           <div className="overflow-hidden rounded-2xl border border-accent-gray bg-white shadow-lg">
             <div className="grid sm:grid-cols-5">
-              {/* Lado izquierdo: info y CTA */}
               <div className="flex flex-col justify-center gap-6 bg-accent-gray/30 p-8 sm:col-span-2">
                 <div className="flex items-center gap-4">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary/30 to-primary/10 text-primary-dark">
@@ -71,30 +107,69 @@ export default function InstagramSection() {
                   <ExternalLink className="h-4 w-4" />
                 </a>
               </div>
-              {/* Lado derecho: grid tipo feed que enlaza al perfil (iframe de Instagram suele estar bloqueado por CORS) */}
-              <div className="grid grid-cols-3 gap-1 p-4 sm:col-span-3 sm:p-6">
-                {[...Array(6)].map((_, i) => (
-                  <a
-                    key={i}
-                    href={INSTAGRAM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="aspect-square rounded-lg bg-secondary/10 transition hover:bg-primary/20"
-                    aria-label={`Ver publicación en Instagram ${i + 1}`}
-                  >
-                    <div className="flex h-full w-full items-center justify-center">
-                      <Instagram className="h-8 w-8 text-secondary/40 sm:h-10 sm:w-10" />
-                    </div>
-                  </a>
-                ))}
+
+              {/* Fotos reales: widget iframe o grid de posts embebidos */}
+              <div className="flex min-h-[280px] items-center justify-center p-4 sm:col-span-3 sm:p-6">
+                {hasWidget ? (
+                  <iframe
+                    title="Instagram feed Agro SouthWest"
+                    src={INSTAGRAM_FEED_WIDGET_URL}
+                    className="h-full min-h-[320px] w-full rounded-lg border-0"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                ) : hasPosts ? (
+                  <div className="grid w-full grid-cols-2 gap-2 sm:grid-cols-3">
+                    {INSTAGRAM_POST_URLS.slice(0, 6).map((url) => (
+                      <blockquote
+                        key={url}
+                        className="instagram-media instagram-media-rendered"
+                        data-instgrm-permalink={url}
+                        data-instgrm-version="14"
+                        style={{ minWidth: 320, maxWidth: 540 }}
+                      >
+                        <a href={url} target="_blank" rel="noopener noreferrer">
+                          Ver publicación en Instagram
+                        </a>
+                      </blockquote>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="grid w-full grid-cols-3 gap-1">
+                    {[...Array(6)].map((_, i) => (
+                      <a
+                        key={i}
+                        href={INSTAGRAM_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="aspect-square rounded-lg bg-secondary/10 transition hover:bg-primary/20"
+                        aria-label={`Ver publicación en Instagram ${i + 1}`}
+                      >
+                        <div className="flex h-full w-full items-center justify-center">
+                          <Instagram className="h-8 w-8 text-secondary/40 sm:h-10 sm:w-10" />
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>
 
-          <p className="mt-4 text-center text-sm text-secondary/60">
-            Haz clic en &quot;Ver perfil en Instagram&quot; para seguirnos y ver
-            todas las publicaciones.
-          </p>
+          {!showRealFeed && (
+            <p className="mt-4 text-center text-sm text-secondary/60">
+              Para mostrar fotos reales: en{" "}
+              <code className="rounded bg-accent-gray px-1 py-0.5 text-xs">
+                components/InstagramSection.tsx
+              </code>{" "}
+              usa <strong>Opción A</strong> (pega 3–6 URLs de posts) o <strong>Opción B</strong> (URL de widget de Elfsight / SnapWidget).
+            </p>
+          )}
+          {showRealFeed && !hasWidget && (
+            <p className="mt-4 text-center text-sm text-secondary/60">
+              Haz clic en cualquier publicación para verla en Instagram.
+            </p>
+          )}
         </motion.div>
       </div>
     </section>

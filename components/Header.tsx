@@ -12,10 +12,10 @@ const LOGO_PATH = "/logo.png";
 
 function Logo() {
   const [useFallback, setUseFallback] = useState(false);
-  // Logo ocupa casi toda la altura de la barra (calce justo), ancho amplio
-  if (useFallback) return <span className="h-10 w-32 flex-shrink-0 sm:h-12 sm:w-40" aria-hidden />;
+  // Logo ~4x más grande: ocupa el 100% de la altura de la barra (sin crecer la barra) y ancho amplio
+  if (useFallback) return <span className="h-full min-h-[2.5rem] w-48 flex-shrink-0 sm:w-64 md:w-80" aria-hidden />;
   return (
-    <span className="relative flex h-10 w-32 flex-shrink-0 sm:h-12 sm:w-44 md:h-[3.25rem] md:w-52">
+    <span className="relative flex h-full min-h-[2.5rem] w-48 flex-shrink-0 sm:w-64 md:w-80 lg:w-96">
       <Image
         src={LOGO_PATH}
         alt="Agro SouthWest"
@@ -23,7 +23,7 @@ function Logo() {
         className="object-contain object-left"
         unoptimized
         onError={() => setUseFallback(true)}
-        sizes="(max-width: 640px) 128px, (max-width: 768px) 176px, 208px"
+        sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
       />
     </span>
   );
@@ -52,7 +52,7 @@ export default function Header() {
         <Link
           href="/#inicio"
           onClick={goToTop}
-          className="flex items-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+          className="flex h-full min-w-0 items-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
         >
           <Logo />
         </Link>
