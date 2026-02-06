@@ -21,7 +21,7 @@ const fadeIn = {
 export default function ProcessSection() {
   const { t } = useLanguage();
   return (
-    <section className="bg-accent-white py-20 sm:py-28">
+    <section id="proceso" className="bg-accent-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
@@ -35,17 +35,20 @@ export default function ProcessSection() {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {stepKeys.map((step, i) => (
             <motion.div
               key={step.titleKey}
-              className="group relative flex flex-col rounded-2xl border border-accent-gray bg-white p-8 shadow-sm transition hover:border-primary/30 hover:shadow-lg"
-              {...fadeIn}
+              className="group relative flex flex-col items-center rounded-2xl border border-accent-gray bg-white p-6 text-center shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 sm:p-8 sm:items-start sm:text-left"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
             >
-              <div className="absolute -top-4 left-8 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-secondary">
+              <div className="absolute -top-3 left-1/2 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full bg-primary text-sm font-bold text-secondary shadow-md sm:left-8 sm:translate-x-0">
                 {i + 1}
               </div>
-              <div className="mt-2 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/15 text-primary-dark transition group-hover:bg-primary/25">
+              <div className="mt-2 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary-dark shadow-inner transition-all duration-300 group-hover:bg-primary/30 group-hover:scale-110 sm:h-14 sm:w-14">
                 <step.icon className="h-7 w-7" />
               </div>
               <h3 className="mt-5 text-xl font-semibold text-secondary">
