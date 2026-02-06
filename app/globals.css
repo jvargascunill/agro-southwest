@@ -25,6 +25,15 @@ body {
   @apply text-sm font-semibold uppercase tracking-widest text-primary-dark;
 }
 
+/* Ocultar scrollbar en carrusel manteniendo scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
