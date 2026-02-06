@@ -1,6 +1,6 @@
 # Agro SouthWest
 
-Landing corporativa para **Agro SouthWest SpA** 🍋 — exportadora de limones chilenos premium. Construida con Next.js 14 (App Router), Tailwind CSS, Framer Motion y Lucide React. Incluye secciones de producto, mercados, certificaciones (GlobalG.A.P., Systems Approach) y formulario de contacto listo para Formspree.
+Landing corporativa para **Agro SouthWest SpA** 🍋 — exportadora de limones chilenos premium. Construida con Next.js 14 (App Router), Tailwind CSS, Framer Motion y Lucide React. Incluye secciones de producto, mercados, certificaciones (Global G.A.P., Systems Approach) y formulario de contacto listo para Formspree.
 
 ## Requisitos
 
@@ -51,6 +51,6 @@ const FORMSPREE_URL = "https://formspree.io/f/TU_FORM_ID";
 - `AboutUs` — Sobre nosotros y misión
 - `ProductSpecs` — Ficha técnica del limón premium
 - `Markets` — Mercados (Argentina, Uruguay, Brasil, Panamá) y logística
-- `Certifications` — GlobalG.A.P., Systems Approach, Sostenibilidad
+- `Certifications` — Global G.A.P., Systems Approach, Sostenibilidad
 - `ContactForm` — Formulario + datos de contacto
 - `Footer` — Enlaces y copyright 2026

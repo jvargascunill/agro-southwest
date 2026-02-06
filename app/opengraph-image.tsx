@@ -79,7 +79,7 @@ export default function OpenGraphImage() {
                 fontWeight: 600,
               }}
             >
-              GlobalG.A.P.
+              Global G.A.P.
             </span>
             <span
               style={{

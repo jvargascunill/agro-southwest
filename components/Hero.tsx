@@ -29,7 +29,7 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
         >
           <span className="rounded-full border border-white/40 bg-white/10 px-3 py-1 backdrop-blur-sm">
-            GlobalG.A.P.
+            Global G.A.P.
           </span>
           <span className="text-white/60">·</span>
           <span className="rounded-full border border-white/40 bg-white/10 px-3 py-1 backdrop-blur-sm">
