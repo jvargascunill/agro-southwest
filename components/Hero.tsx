@@ -11,14 +11,14 @@ export default function Hero() {
       id="inicio"
       className="relative flex min-h-[90vh] w-full flex-col items-center justify-center overflow-hidden bg-secondary"
     >
-      {/* Background */}
+      {/* Background: foto del campo con transparencia y tema verde */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-35"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
         style={{
-          backgroundImage: `url(https://images.unsplash.com/photo-1547514701-42782101795e?w=1920&q=80)`,
+          backgroundImage: `url(/hero-campo.jpg)`,
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/90 via-secondary/80 to-secondary/95" />
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/92 via-secondary/85 to-secondary/96" />
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-4 text-center">
         {/* Badges de confianza */}
