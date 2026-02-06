@@ -4,10 +4,8 @@ import { motion } from "framer-motion";
 import {
   Package,
   Scale,
-  Clock,
   Calendar,
   Sparkles,
-  Leaf,
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -21,7 +19,6 @@ const fadeIn = {
 const specKeys = [
   { icon: Package, labelKey: "product.calibres", valueKey: "product.calibresValue" },
   { icon: Scale, labelKey: "product.weight", valueKey: "product.weightValue" },
-  { icon: Clock, labelKey: "product.shelfLife", valueKey: "product.shelfLifeValue" },
   { icon: Calendar, labelKey: "product.availability", valueKey: "product.availabilityValue" },
 ];
 
@@ -75,12 +72,6 @@ export default function ProductSpecs() {
               <Sparkles className="h-5 w-5 text-primary-dark" />
               <span className="text-sm font-medium text-secondary">
                 {t("product.skin")}
-              </span>
-            </div>
-            <div className="flex items-center gap-2 rounded-full bg-primary/15 px-4 py-2">
-              <Leaf className="h-5 w-5 text-primary-dark" />
-              <span className="text-sm font-medium text-secondary">
-                {t("product.seedless")}
               </span>
             </div>
           </div>
