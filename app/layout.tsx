@@ -96,7 +96,7 @@ export default function RootLayout({
         "@type": "Product",
         name: "Limones Premium Chile",
         alternateName: ["Premium Chilean Lemons", "智利优质柠檬", "Exportación de limones"],
-        description: "Exportación de limones frescos desde Chile. Lemon export. Calibres 95-165, Global G.A.P., Systems Approach. Temporada abril a septiembre. Limones para mercados internacionales.",
+        description: "Exportación de limones frescos desde Chile. Lemon export. Calibres 95-165, Global G.A.P., Systems Approach. Temporada mayo a diciembre. Limones para mercados internacionales.",
         brand: { "@type": "Brand", name: "Agro SouthWest" },
         category: "Limones",
       },
@@ -124,7 +124,7 @@ export default function RootLayout({
             name: "¿En qué temporada están disponibles los limones Chile para exportación?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Nuestra temporada de exportación de limones va de abril a septiembre (contraestación para el Hemisferio Norte). Es la ventana óptima de calidad desde la zona central y sur de Chile.",
+              text: "Nuestra temporada de exportación de limones va de mayo a diciembre (contraestación para el Hemisferio Norte). Es la ventana óptima de calidad desde la zona central y sur de Chile.",
             },
           },
           {

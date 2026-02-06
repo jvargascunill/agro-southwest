@@ -5,9 +5,9 @@ import { Globe, Shield, Calendar } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const stats = [
-  { value: "4+", labelKey: "stats.markets", sublabelKey: null, icon: Globe },
+  { value: "+2", labelKey: "stats.markets", sublabelKey: null, icon: Globe },
   { value: "2", labelKey: "stats.certs", sublabelKey: "stats.certsSublabel", icon: Shield },
-  { value: "Abril–Sept", labelKey: "stats.season", sublabelKey: "stats.seasonSublabel", icon: Calendar },
+  { value: "Mayo–Dic", labelKey: "stats.season", sublabelKey: "stats.seasonSublabel", icon: Calendar },
 ];
 
 const fadeIn = {
