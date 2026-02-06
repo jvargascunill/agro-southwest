@@ -132,7 +132,7 @@ export default function RootLayout({
             name: "¿Cómo se coordina la logística de exportación de limones hasta mi país?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Para el Cono Sur (Argentina, Uruguay) usamos logística terrestre. Para Brasil y Panamá, marítima. Te acompañamos en la coordinación y te mantenemos informado del estado del embarque.",
+              text: "Para el Cono Sur (Argentina y Uruguay) usamos logística terrestre. Te acompañamos en la coordinación y te mantenemos informado del estado del embarque.",
             },
           },
         ],

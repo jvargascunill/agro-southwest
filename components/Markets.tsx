@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Ship, Truck, MapPin } from "lucide-react";
+import { Truck, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const fadeIn = {
@@ -14,8 +14,6 @@ const fadeIn = {
 const markets = [
   { name: "Argentina", modeKey: "markets.modeTerrestrial", icon: Truck },
   { name: "Uruguay", modeKey: "markets.modeTerrestrial", icon: Truck },
-  { name: "Brasil", modeKey: "markets.modeMaritime", icon: Ship },
-  { name: "Panamá", modeKey: "markets.modeMaritime", icon: Ship },
 ];
 
 export default function Markets() {
@@ -35,7 +33,7 @@ export default function Markets() {
           </p>
         </motion.div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {markets.map(({ name, modeKey, icon: Icon }) => (
             <motion.div
               key={name}
@@ -57,15 +55,11 @@ export default function Markets() {
         </div>
 
         <motion.div
-          className="mt-12 flex flex-wrap items-center justify-center gap-6 rounded-xl border border-accent-gray bg-accent-gray/50 px-6 py-4"
+          className="mt-12 flex flex-wrap items-center justify-center rounded-xl border border-accent-gray bg-accent-gray/50 px-6 py-4"
           {...fadeIn}
         >
           <span className="text-sm font-medium text-secondary/80">
             {t("markets.terrestrial")}
-          </span>
-          <span className="text-accent-gray-dark">•</span>
-          <span className="text-sm font-medium text-secondary/80">
-            {t("markets.maritime")}
           </span>
         </motion.div>
       </div>
