@@ -7,17 +7,11 @@ import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const CAROUSEL_IMAGES = [
-  "/carousel/01.png",
-  "/carousel/02.png",
-  "/carousel/03.png",
-  "/carousel/04.png",
-  "/carousel/05.png",
-  "/carousel/06.png",
-  "/carousel/07.png",
-  "/carousel/08.png",
-  "/carousel/09.png",
-  "/carousel/10.png",
-  "/carousel/11.png",
+  "/carousel/01.png", // campo
+  "/carousel/02.png", // fruta colgada
+  "/carousel/03.png", // fruta colgada
+  "/carousel/04.png", // fruta colgada
+  "/carousel/05.png", // cajas
 ];
 
 const fadeIn = {

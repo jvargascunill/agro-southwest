@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Leaf, Target, Users } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import GalleryCarousel from "@/components/GalleryCarousel";
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
@@ -78,13 +79,17 @@ export default function AboutUs() {
           </motion.div>
         </div>
 
-        {/* Socio fundador */}
+        <div className="mt-20">
+          <GalleryCarousel />
+        </div>
+
+        {/* Equipo */}
         <motion.div
           className="mt-20 flex flex-col items-center"
           {...fadeIn}
         >
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
-            {t("about.founders")}
+            {t("about.teamLabel")}
           </p>
           <div className="mt-8 flex max-w-2xl flex-col items-center rounded-2xl border border-accent-gray bg-white p-8 shadow-sm sm:flex-row sm:items-start sm:gap-8 sm:text-left">
             <div className="relative h-32 w-32 flex-shrink-0 overflow-hidden rounded-full bg-accent-gray">

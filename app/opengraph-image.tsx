@@ -59,7 +59,7 @@ export default function OpenGraphImage() {
               marginBottom: 24,
             }}
           >
-            Exportación de limones premium
+            Exportación de cítricos premium
           </div>
           <div
             style={{

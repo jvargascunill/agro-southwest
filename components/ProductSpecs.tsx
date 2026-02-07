@@ -5,6 +5,7 @@ import {
   Package,
   Scale,
   Calendar,
+  Route,
   Sparkles,
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -20,6 +21,7 @@ const specKeys = [
   { icon: Package, labelKey: "product.calibres", valueKey: "product.calibresValue" },
   { icon: Scale, labelKey: "product.weight", valueKey: "product.weightValue" },
   { icon: Calendar, labelKey: "product.availability", valueKey: "product.availabilityValue" },
+  { icon: Route, labelKey: "product.tracking", valueKey: "product.trackingValue" },
 ];
 
 export default function ProductSpecs() {

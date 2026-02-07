@@ -17,9 +17,9 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.agrosouthwest.
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Exportación de Limones | Limones Chile | Lemon Export - Agro SouthWest",
+  title: "Exportación de Cítricos | Cítricos Chile | Citrus Export - Agro SouthWest",
   description:
-    "Exportación de limones desde Chile. Somos exportadores de limones frescos (lemon export, 柠檬出口). Limones Chile con certificación Global G.A.P. y Systems Approach. Cotiza limones premium para USA, China, Argentina, Brasil.",
+    "Exportación de cítricos desde Chile. Somos exportadores de cítricos frescos (citrus export, 柑橘出口). Cítricos Chile con certificación Global G.A.P. y Systems Approach. Cotiza cítricos premium para USA, China, Argentina.",
   keywords: [
     "exportación de limones",
     "exportacion de limones",
@@ -44,19 +44,19 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: "Exportación de Limones | Limones Chile - Agro SouthWest",
+    title: "Exportación de Cítricos | Cítricos Chile - Agro SouthWest",
     description:
-      "Exportación de limones desde Chile. Lemon export, 柠檬出口. Limones frescos con Global G.A.P. y Systems Approach. Cotiza ya.",
+      "Exportación de cítricos desde Chile. Citrus export, 柑橘出口. Cítricos frescos con Global G.A.P. y Systems Approach. Cotiza ya.",
     type: "website",
     url: SITE_URL,
     siteName: "Agro SouthWest",
     locale: "es_CL",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Agro SouthWest - Exportación de Limones Chile" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Agro SouthWest - Exportación de Cítricos Chile" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Exportación de Limones | Limones Chile - Agro SouthWest",
-    description: "Exportación de limones desde Chile. Lemon export. Global G.A.P. y Systems Approach.",
+    title: "Exportación de Cítricos | Cítricos Chile - Agro SouthWest",
+    description: "Exportación de cítricos desde Chile. Citrus export. Global G.A.P. y Systems Approach.",
   },
   robots: "index, follow",
 };
@@ -79,57 +79,57 @@ export default function RootLayout({
           "Agro SouthWest 智利柠檬出口",
         ],
         url: SITE_URL,
-        description: "Exportación de limones desde Chile. Exportadora de limones frescos. Lemon export from Chile. 智利柠檬出口. Certificación Global G.A.P. y Systems Approach.",
+        description: "Exportación de cítricos desde Chile. Exportadora de cítricos frescos. Citrus export from Chile. 智利柑橘出口. Certificación Global G.A.P. y Systems Approach.",
         logo: `${SITE_URL}/icon.png`,
-        knowsAbout: ["Exportación de limones", "Lemon export", "Limones Chile", "柠檬出口"],
+        knowsAbout: ["Exportación de cítricos", "Citrus export", "Cítricos Chile", "柑橘出口"],
       },
       {
         "@type": "WebSite",
-        name: "Agro SouthWest - Exportación de Limones Chile",
-        alternateName: "Agro SouthWest Lemon Export | 智利柠檬出口",
+        name: "Agro SouthWest - Exportación de Cítricos Chile",
+        alternateName: "Agro SouthWest Citrus Export | 智利柑橘出口",
         url: SITE_URL,
-        description: "Exportación de limones desde Chile. Lemon export. Limones Chile. 柠檬出口. Cotiza limones premium con Global G.A.P. y Systems Approach.",
+        description: "Exportación de cítricos desde Chile. Citrus export. Cítricos Chile. 柑橘出口. Cotiza cítricos premium con Global G.A.P. y Systems Approach.",
         publisher: { "@id": `${SITE_URL}#organization` },
         inLanguage: ["es", "en", "zh"],
       },
       {
         "@type": "Product",
-        name: "Limones Premium Chile",
-        alternateName: ["Premium Chilean Lemons", "智利优质柠檬", "Exportación de limones"],
-        description: "Exportación de limones frescos desde Chile. Lemon export. Calibres 95-165, Global G.A.P., Systems Approach. Temporada mayo a diciembre. Limones para mercados internacionales.",
+        name: "Cítricos Premium Chile",
+        alternateName: ["Premium Chilean Citrus", "智利优质柑橘", "Exportación de cítricos"],
+        description: "Exportación de cítricos frescos desde Chile. Citrus export. Calibres 95-165, Global G.A.P., Systems Approach. Temporada mayo a diciembre. Seguimiento desde venta hasta recepción.",
         brand: { "@type": "Brand", name: "Agro SouthWest" },
-        category: "Limones",
+        category: "Cítricos",
       },
       {
         "@type": "FAQPage",
         mainEntity: [
           {
             "@type": "Question",
-            name: "¿Cuál es el volumen mínimo de compra para exportación de limones?",
+            name: "¿Cuál es el volumen mínimo de compra para exportación de cítricos?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Trabajamos con pedidos que se adapten a tu operación. Contáctanos con tu volumen estimado y destino para darte una cotización a medida de exportación de limones.",
+              text: "Trabajamos con pedidos que se adapten a tu operación. Contáctanos con tu volumen estimado y destino para darte una cotización a medida de exportación de cítricos.",
             },
           },
           {
             "@type": "Question",
-            name: "¿Entregan documentación fitosanitaria para exportación de limones?",
+            name: "¿Entregan documentación fitosanitaria para exportación de cítricos?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Sí. Todas las exportaciones de limones incluyen la documentación requerida (Systems Approach SAG/USDA cuando aplica, certificados de origen, etc.). Global G.A.P. respalda nuestra trazabilidad.",
+              text: "Sí. Todas las exportaciones de cítricos incluyen la documentación requerida (Systems Approach SAG/USDA cuando aplica, certificados de origen, etc.). Global G.A.P. respalda nuestra trazabilidad.",
             },
           },
           {
             "@type": "Question",
-            name: "¿En qué temporada están disponibles los limones Chile para exportación?",
+            name: "¿En qué temporada están disponibles los cítricos Chile para exportación?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Nuestra temporada de exportación de limones va de mayo a diciembre (contraestación para el Hemisferio Norte). Es la ventana óptima de calidad desde la zona central y sur de Chile.",
+              text: "Nuestra temporada de exportación de cítricos va de mayo a diciembre (contraestación para el Hemisferio Norte). Es la ventana óptima de calidad desde la zona norte y central de Chile.",
             },
           },
           {
             "@type": "Question",
-            name: "¿Cómo se coordina la logística de exportación de limones hasta mi país?",
+            name: "¿Cómo se coordina la logística de exportación de cítricos hasta mi país?",
             acceptedAnswer: {
               "@type": "Answer",
               text: "Para el Cono Sur (Argentina y Uruguay) usamos logística terrestre. Te acompañamos en la coordinación y te mantenemos informado del estado del embarque.",

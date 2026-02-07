@@ -99,7 +99,7 @@ export default function Footer() {
           </div>
         </div>
         <p className="mt-8 text-center text-xs text-white/50" aria-hidden="true">
-          Exportación de limones desde Chile · Limones Chile · Lemon export · 智利柠檬出口 · Exportação de limões · Limones premium para mercados internacionales.
+          Exportación de cítricos desde Chile · Cítricos Chile · Citrus export · 智利柑橘出口 · Exportação de cítricos · Cítricos premium para mercados internacionales.
         </p>
         <div className="mt-6 border-t border-white/20 pt-6 text-center text-sm text-white/70">
           {t("footer.copyright")}
