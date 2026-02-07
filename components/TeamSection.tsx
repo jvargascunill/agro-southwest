@@ -81,7 +81,7 @@ export default function TeamSection() {
             </motion.div>
             <motion.div {...fadeIn}>
               <TeamCard
-                imageSrc="/team/felipe-zurita.png"
+                imageSrc="/team/felipe-zurita.png?v=2"
                 imageAlt={t("about.felipeName")}
                 name={t("about.felipeName")}
                 role={t("about.felipeRole")}
