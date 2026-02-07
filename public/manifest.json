@@ -1,0 +1,11 @@
+{
+  "name": "Agro SouthWest - Exportación de Cítricos Chile",
+  "short_name": "Agro SouthWest",
+  "description": "Exportación de cítricos desde Chile: limones, naranjas y mandarinas. Comprar limones Chile, exportación de naranjas y fruta chilena. Global G.A.P. y Systems Approach.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafbf9",
+  "theme_color": "#1a3d2e",
+  "lang": "es",
+  "icons": []
+}

@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Agro SouthWest - Exportación de Limones Premium desde Chile";
+export const alt = "Agro SouthWest - Exportación de cítricos, limones, naranjas y mandarinas desde Chile";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -50,7 +50,7 @@ export default function OpenGraphImage() {
               lineHeight: 1.1,
             }}
           >
-            Limones Chile
+            Limones · Naranjas · Mandarinas
           </div>
           <div
             style={{
@@ -59,7 +59,7 @@ export default function OpenGraphImage() {
               marginBottom: 24,
             }}
           >
-            Exportación de cítricos premium
+            Exportación de cítricos Chile
           </div>
           <div
             style={{
