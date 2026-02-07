@@ -18,6 +18,9 @@ const CAROUSEL_IMAGES = [
   "/carousel/09.png",
   "/carousel/10.png",
   "/carousel/11.png",
+  "/carousel/12.png",
+  "/carousel/13.png",
+  "/carousel/14.png",
 ];
 
 const fadeIn = {
