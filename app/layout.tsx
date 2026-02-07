@@ -122,7 +122,7 @@ export default function RootLayout({
         url: SITE_URL,
         description: SEO_LONG_DESCRIPTION,
         publisher: { "@id": `${SITE_URL}#organization` },
-        inLanguage: ["es", "en", "zh"],
+        inLanguage: ["es", "en", "pt", "zh"],
         potentialAction: {
           "@type": "SearchAction",
           target: { "@type": "EntryPoint", urlTemplate: `${SITE_URL}/#contacto` },

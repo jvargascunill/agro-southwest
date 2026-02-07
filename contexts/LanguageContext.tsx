@@ -11,6 +11,13 @@ import { messages, type Locale } from "@/lib/messages";
 
 const STORAGE_KEY = "agro-southwest-locale";
 
+const LANG_ATTR: Record<Locale, string> = {
+  es: "es",
+  en: "en",
+  zh: "zh-Hans",
+  pt: "pt-BR",
+};
+
 type LanguageContextType = {
   locale: Locale;
   setLocale: (locale: Locale) => void;
@@ -31,7 +38,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY) as Locale | null;
-    if (stored && (stored === "es" || stored === "en" || stored === "zh")) {
+    if (stored && ["es", "en", "zh", "pt"].includes(stored)) {
       setLocaleState(stored);
     }
     setMounted(true);
@@ -41,15 +48,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     setLocaleState(newLocale);
     if (typeof window !== "undefined") {
       localStorage.setItem(STORAGE_KEY, newLocale);
-      document.documentElement.lang =
-        newLocale === "zh" ? "zh-Hans" : newLocale === "en" ? "en" : "es";
+      document.documentElement.lang = LANG_ATTR[newLocale];
     }
   }, []);
 
   useEffect(() => {
     if (!mounted) return;
-    document.documentElement.lang =
-      locale === "zh" ? "zh-Hans" : locale === "en" ? "en" : "es";
+    document.documentElement.lang = LANG_ATTR[locale];
   }, [locale, mounted]);
 
   const t = useCallback(

@@ -175,7 +175,7 @@ export default function ContactForm() {
               </div>
               <div className="mt-6 flex items-center justify-between">
                 <p className="text-sm text-secondary/70">
-                  Cotizar / Quote: indique volumen y destino.
+                  {t("contact.quoteHint")}
                 </p>
                 <button
                   type="submit"

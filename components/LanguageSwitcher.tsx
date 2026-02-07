@@ -7,6 +7,7 @@ import { Globe } from "lucide-react";
 const locales = [
   { code: "es" as const, label: "ES" },
   { code: "en" as const, label: "EN" },
+  { code: "pt" as const, label: "PT" },
   { code: "zh" as const, label: "中文" },
 ];
 

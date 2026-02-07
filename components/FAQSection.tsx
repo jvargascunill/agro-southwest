@@ -26,7 +26,7 @@ export default function FAQSection() {
           viewport={{ once: true }}
         >
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
-            Preguntas frecuentes
+            {t("faq.sectionLabel")}
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
             {t("faq.title")}
