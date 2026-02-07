@@ -7,11 +7,17 @@ import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const CAROUSEL_IMAGES = [
-  "/carousel/01.png", // campo
-  "/carousel/02.png", // fruta colgada
-  "/carousel/03.png", // fruta colgada
-  "/carousel/04.png", // fruta colgada
-  "/carousel/05.png", // cajas
+  "/carousel/01.png",
+  "/carousel/02.png",
+  "/carousel/03.png",
+  "/carousel/04.png",
+  "/carousel/05.png",
+  "/carousel/06.png",
+  "/carousel/07.png",
+  "/carousel/08.png",
+  "/carousel/09.png",
+  "/carousel/10.png",
+  "/carousel/11.png",
 ];
 
 const fadeIn = {
@@ -35,7 +41,7 @@ export default function GalleryCarousel() {
   };
 
   return (
-    <section className="bg-accent-gray py-20 sm:py-28">
+    <section className="bg-accent-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
