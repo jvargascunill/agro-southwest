@@ -39,7 +39,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contacto" className="bg-accent-gray py-20 sm:py-28">
+    <section id="contacto" className="bg-accent-gray py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center"
@@ -58,48 +58,7 @@ export default function ContactForm() {
           </p>
         </motion.div>
 
-        {/* Mapa Oficina */}
-        <motion.div
-          className="mx-auto mt-12 max-w-5xl"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className="rounded-2xl border border-accent-gray overflow-hidden bg-white shadow-sm">
-            <div className="flex items-center justify-between gap-4 border-b border-accent-gray bg-accent-gray/30 px-4 py-3">
-              <div className="flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-primary-dark" />
-                <span className="font-semibold text-secondary">{t("contact.office")}</span>
-              </div>
-              <a
-                href={GOOGLE_MAPS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-medium text-primary-dark hover:underline"
-              >
-                {t("contact.viewOnMap")}
-              </a>
-            </div>
-            <div className="aspect-[16/9] w-full min-h-[240px]">
-              <iframe
-                title={t("contact.office")}
-                src={GOOGLE_MAPS_EMBED}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="h-full w-full"
-              />
-            </div>
-            <p className="px-4 py-2 text-sm text-secondary/80">
-              {t("contact.address")}
-            </p>
-          </div>
-        </motion.div>
-
-        <div className="mx-auto mt-14 grid max-w-5xl gap-12 lg:grid-cols-5">
+        <div className="mx-auto mt-12 grid max-w-5xl gap-12 lg:grid-cols-5">
           <motion.div
             className="lg:col-span-2"
             initial={{ opacity: 0, x: -20 }}
@@ -246,6 +205,47 @@ export default function ContactForm() {
             </form>
           </motion.div>
         </div>
+
+        {/* Mapa Oficina */}
+        <motion.div
+          className="mx-auto mt-14 max-w-5xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="rounded-2xl border border-accent-gray overflow-hidden bg-white shadow-sm">
+            <div className="flex items-center justify-between gap-4 border-b border-accent-gray bg-accent-gray/30 px-4 py-3">
+              <div className="flex items-center gap-2">
+                <MapPin className="h-5 w-5 text-primary-dark" />
+                <span className="font-semibold text-secondary">{t("contact.office")}</span>
+              </div>
+              <a
+                href={GOOGLE_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-primary-dark hover:underline"
+              >
+                {t("contact.viewOnMap")}
+              </a>
+            </div>
+            <div className="aspect-[16/9] w-full min-h-[240px]">
+              <iframe
+                title={t("contact.office")}
+                src={GOOGLE_MAPS_EMBED}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-full w-full"
+              />
+            </div>
+            <p className="px-4 py-2 text-sm text-secondary/80">
+              {t("contact.address")}
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

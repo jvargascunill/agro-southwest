@@ -47,7 +47,7 @@ export default function InstagramSection() {
   return (
     <section
       id="instagram"
-      className="bg-accent-white py-20 sm:py-28"
+      className="bg-accent-white py-14 sm:py-20"
     >
       {hasPosts && (
         <Script

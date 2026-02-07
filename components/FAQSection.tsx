@@ -17,7 +17,7 @@ export default function FAQSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="faq" className="bg-accent-white py-20 sm:py-28">
+    <section id="faq" className="bg-accent-white py-14 sm:py-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center"

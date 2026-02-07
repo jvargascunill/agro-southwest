@@ -19,7 +19,7 @@ const markets = [
 export default function Markets() {
   const { t } = useLanguage();
   return (
-    <section id="mercados" className="bg-accent-white py-20 sm:py-28">
+    <section id="mercados" className="bg-accent-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">

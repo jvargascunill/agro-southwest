@@ -5,6 +5,7 @@ import ProductSpecs from "@/components/ProductSpecs";
 import Markets from "@/components/Markets";
 import ProcessSection from "@/components/ProcessSection";
 import Certifications from "@/components/Certifications";
+import TeamSection from "@/components/TeamSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import InstagramSection from "@/components/InstagramSection";
 import ContactForm from "@/components/ContactForm";
@@ -21,6 +22,7 @@ export default function Home() {
       <Markets />
       <ProcessSection />
       <Certifications />
+      <TeamSection />
       <TestimonialSection />
       <InstagramSection />
       <FAQSection />

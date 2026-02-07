@@ -43,7 +43,7 @@ export default function GalleryCarousel() {
   };
 
   return (
-    <section className="bg-accent-white py-20 sm:py-28">
+    <section className="bg-accent-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">

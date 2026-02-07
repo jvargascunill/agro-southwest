@@ -15,7 +15,7 @@ const fadeIn = {
 export default function AboutUs() {
   const { t } = useLanguage();
   return (
-    <section id="nosotros" className="bg-accent-white py-20 sm:py-28">
+    <section id="nosotros" className="bg-accent-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center"
@@ -82,49 +82,6 @@ export default function AboutUs() {
         <div className="mt-20">
           <GalleryCarousel />
         </div>
-
-        {/* Equipo */}
-        <motion.div
-          className="mt-20 flex flex-col items-center"
-          {...fadeIn}
-        >
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
-            {t("about.teamLabel")}
-          </p>
-          <div className="mt-8 flex max-w-2xl flex-col items-center rounded-2xl border border-accent-gray bg-white p-8 shadow-sm sm:flex-row sm:items-start sm:gap-8 sm:text-left">
-            <div className="relative h-32 w-32 flex-shrink-0 overflow-hidden rounded-full bg-accent-gray">
-              <img
-                src="/team/javier-vargas.png"
-                alt={t("about.javierName")}
-                className="h-full w-full object-cover"
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  target.style.display = "none";
-                  const fallback = target.nextElementSibling as HTMLElement;
-                  if (fallback) fallback.style.display = "flex";
-                }}
-              />
-              <span
-                className="absolute inset-0 hidden items-center justify-center text-2xl font-bold text-secondary/60"
-                style={{ display: "none" }}
-                aria-hidden
-              >
-                JVC
-              </span>
-            </div>
-            <div className="mt-6 sm:mt-0">
-              <h3 className="text-xl font-semibold text-secondary">
-                {t("about.javierName")}
-              </h3>
-              <p className="mt-1 text-sm font-medium text-primary-dark">
-                {t("about.javierRole")}
-              </p>
-              <p className="mt-4 text-secondary/80">
-                {t("about.javierBio")}
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

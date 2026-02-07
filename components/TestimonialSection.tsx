@@ -20,55 +20,51 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: "1",
-    lang: "en",
-    quoteEn:
-      "Working with Agro SouthWest gave us the confidence of receiving a product with full traceability and documentation in order. Communication was smooth throughout the entire process.",
+    lang: "es",
+    quoteEn: "",
     quoteZh: "",
     quoteEs:
       "Trabajar con Agro SouthWest nos dio la seguridad de recibir un producto con trazabilidad y documentación en orden. La comunicación fue fluida en todo el proceso.",
-    author: "Import manager, USA",
-    locationEn: "California, United States",
+    author: "Gerente de compras, Argentina",
+    locationEn: "",
     locationZh: "",
-    locationEs: "California, Estados Unidos",
+    locationEs: "Córdoba, Argentina",
   },
   {
     id: "2",
-    lang: "zh",
+    lang: "es",
     quoteEn: "",
-    quoteZh:
-      "与 Agro SouthWest 合作非常顺利。柠檬品质稳定，到港后状态良好，单证齐全。我们会继续下单。",
+    quoteZh: "",
     quoteEs:
-      "La colaboración con Agro SouthWest fue muy fluida. La calidad del limón es estable, llegó en buen estado al puerto y la documentación estuvo completa. Seguiremos comprando.",
-    author: "采购经理，中国",
+      "Llevamos dos temporadas abasteciéndonos de cítricos con Agro SouthWest. Calidad confiable, entrega a tiempo y equipo profesional. Lo recomendamos para quien busque suministro contraestacional en el Cono Sur.",
+    author: "Director de compras, Argentina",
     locationEn: "",
-    locationZh: "上海，中国",
-    locationEs: "Shanghái, China",
+    locationZh: "",
+    locationEs: "Córdoba, Argentina",
   },
   {
     id: "3",
     lang: "es",
-    quoteEn:
-      "We have been sourcing lemons from Agro SouthWest for two seasons. Reliable quality, on-time delivery, and a professional team. Recommended for anyone in the Southern Cone looking for counter-season supply.",
+    quoteEn: "",
     quoteZh: "",
     quoteEs:
-      "Llevamos dos temporadas abasteciéndonos de limones con Agro SouthWest. Calidad confiable, entrega a tiempo y equipo profesional. Lo recomendamos para quien busque suministro contraestacional en el Cono Sur.",
-    author: "Director de compras, Argentina",
-    locationEn: "Buenos Aires, Argentina",
+      "La colaboración con Agro SouthWest fue muy fluida. La calidad del producto es estable, llegó en buen estado y la documentación estuvo completa. Seguiremos comprando.",
+    author: "Importador, Uruguay",
+    locationEn: "",
     locationZh: "",
-    locationEs: "Buenos Aires, Argentina",
+    locationEs: "Montevideo, Uruguay",
   },
   {
     id: "4",
-    lang: "zh",
+    lang: "es",
     quoteEn: "",
-    quoteZh:
-      "智利柠檬的供应窗口正好弥补我们北半球的空缺。Agro SouthWest 的响应速度快，报价清晰，合作体验很好。",
+    quoteZh: "",
     quoteEs:
-      "La ventana de suministro de limón chileno complementa muy bien nuestra temporada en el Hemisferio Norte. Agro SouthWest responde rápido, las cotizaciones son claras y la experiencia de cooperación es muy buena.",
-    author: "进口商，中国",
+      "La ventana de suministro de cítricos chilenos complementa muy bien nuestra temporada. Agro SouthWest responde rápido, las cotizaciones son claras y la experiencia de cooperación es muy buena.",
+    author: "Encargado de abastecimiento, Uruguay",
     locationEn: "",
-    locationZh: "广州，中国",
-    locationEs: "Cantón, China",
+    locationZh: "",
+    locationEs: "Montevideo, Uruguay",
   },
 ];
 
@@ -108,7 +104,7 @@ export default function TestimonialSection() {
   };
 
   return (
-    <section className="bg-accent-gray py-20 sm:py-28">
+    <section className="bg-accent-gray py-14 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
