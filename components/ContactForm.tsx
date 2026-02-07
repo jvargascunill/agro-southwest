@@ -5,8 +5,7 @@ import { motion } from "framer-motion";
 import { Send, Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-// Preparado para Formspree: reemplazar YOUR_FORM_ID por el ID de tu formulario
-const FORMSPREE_URL = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_URL = "https://formspree.io/f/xykdykve";
 
 const OFFICE_ADDRESS = "Ahumada 131, of 913, Santiago, Chile";
 const GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(OFFICE_ADDRESS)}`;
