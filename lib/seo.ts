@@ -102,16 +102,19 @@ export const SEO_KEYWORDS = [
   "Systems Approach Chile",
   "trazabilidad cítricos",
   "documentación fitosanitaria",
-  // Marca
+  // Marca (una palabra, dos palabras y tres palabras para todas las búsquedas)
   "Agro SouthWest",
+  "Agro South West",
+  "agro south west",
   "Agro SouthWest Chile",
   "Agro SouthWest cítricos",
   "Agro SouthWest limones",
+  "agrosouthwest",
 ];
 
-/** Descripción corta para meta description (≈155–160 caracteres) */
+/** Descripción corta para meta description (≈155–160 caracteres). Incluye "Agro South West" para búsquedas con 3 palabras. */
 export const SEO_META_DESCRIPTION =
-  "Exportación de cítricos desde Chile: limones, naranjas y mandarinas. Comprar limones Chile, exportación de naranjas y fruta chilena. Global G.A.P. y Systems Approach. Agro SouthWest.";
+  "Agro South West: exportación de cítricos desde Chile. Limones, naranjas y mandarinas con Global G.A.P. y Systems Approach. Conectando Chile con el mundo. Cotiza ya.";
 
 /**
  * Descripción larga para crawlers de IA, rich snippets y Open Graph.
@@ -124,14 +127,14 @@ export const SEO_LONG_DESCRIPTION =
   "Comprar limones, cotizar exportación de cítricos, fruta chilena premium con trazabilidad y documentación fitosanitaria. " +
   "Contacto: Santiago, Chile. Citrus export, Chilean lemons, orange and tangerine export.";
 
-/** Título principal para SEO y redes */
+/** Título principal para SEO y redes. Incluye "Agro South West" para búsquedas con 3 palabras. */
 export const SEO_TITLE =
-  "Exportación de Cítricos Chile | Limones, Naranjas y Mandarinas | Agro SouthWest";
+  "Agro South West | Exportación de Cítricos Chile | Limones, Naranjas y Mandarinas";
 
 /** Título alternativo más corto (redes, share) */
-export const SEO_TITLE_SHORT = "Cítricos Chile | Limones y Naranjas - Agro SouthWest";
+export const SEO_TITLE_SHORT = "Agro South West | Cítricos Chile - Limones y Naranjas";
 
-export const SEO_SITE_NAME = "Agro SouthWest";
+export const SEO_SITE_NAME = "Agro South West";
 export const SEO_DEFAULT_IMAGE_ALT =
   "Agro SouthWest - Exportación de cítricos, limones, naranjas y mandarinas desde Chile";
 

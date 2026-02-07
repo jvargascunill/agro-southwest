@@ -36,6 +36,10 @@ export const metadata: Metadata = {
   publisher: SEO_SITE_NAME,
   alternates: { canonical: SITE_URL },
   manifest: "/manifest.json",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: SEO_TITLE_SHORT,
     description: SEO_LONG_DESCRIPTION,
@@ -44,6 +48,7 @@ export const metadata: Metadata = {
     siteName: SEO_SITE_NAME,
     locale: "es_CL",
     images: [
+      { url: "/logo.png", width: 512, height: 512, alt: "Agro South West - Logo" },
       {
         url: "/opengraph-image",
         width: 1200,
@@ -83,6 +88,10 @@ export default function RootLayout({
         "@id": `${SITE_URL}#organization`,
         name: SEO_SITE_NAME,
         alternateName: [
+          "Agro SouthWest",
+          "Agro South West",
+          "agro south west",
+          "agrosouthwest",
           "Agro SouthWest Chile",
           "Agro SouthWest Citrus Export",
           "Agro SouthWest Lemon Export",
@@ -246,6 +255,36 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {/* Datos estructurados oficiales para que Google reconozca el sitio de la organización */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Agro South West",
+              alternateName: ["Agro SouthWest", "agro southwest", "agro south west", "agrosouthwest"],
+              url: "https://www.agrosouthwest.com/",
+              logo: "https://www.agrosouthwest.com/logo.png",
+              description:
+                "Conectando Chile con el Mundo. Logística terrestre y marítima en el Cono Sur.",
+              sameAs: ["https://www.instagram.com/agro_southwest/"],
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Ahumada 131, of 913",
+                addressLocality: "Santiago",
+                addressCountry: "CL",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "contacto@agrosouthwest.com",
+                telephone: "+56 9 7426 5206",
+                contactType: "customer service",
+                areaServed: "CL",
+              },
+            }),
+          }}
         />
         <ClientProviders>
           <Header />
