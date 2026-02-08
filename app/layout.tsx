@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   alternates: { canonical: SITE_URL },
   manifest: "/manifest.json",
   icons: {
-    icon: "/logo.png",
+    icon: [{ url: "/logo.png", type: "image/png", sizes: "32x32" }, { url: "/logo.png", type: "image/png", sizes: "192x192" }],
     apple: "/logo.png",
   },
   openGraph: {
@@ -170,6 +170,7 @@ export default function RootLayout({
         brand: { "@type": "Brand", name: SEO_SITE_NAME },
         category: "Cítricos",
         keywords: "cítricos, cítricos Chile, exportación de cítricos, fruta chilena, citrus export",
+        offers: { "@type": "Offer", availability: "https://schema.org/InStock", url: `${SITE_URL}/#contacto` },
       },
       {
         "@type": "Product",
@@ -180,6 +181,7 @@ export default function RootLayout({
         brand: { "@type": "Brand", name: SEO_SITE_NAME },
         category: "Limones",
         keywords: "limones, limones Chile, exportación de limones, comprar limones, limones chilenos, lemon export",
+        offers: { "@type": "Offer", availability: "https://schema.org/InStock", url: `${SITE_URL}/#contacto` },
       },
       {
         "@type": "Product",
@@ -190,6 +192,7 @@ export default function RootLayout({
         brand: { "@type": "Brand", name: SEO_SITE_NAME },
         category: "Naranjas",
         keywords: "naranjas, naranjas Chile, exportación de naranjas, comprar naranjas, fruta chilena",
+        offers: { "@type": "Offer", availability: "https://schema.org/InStock", url: `${SITE_URL}/#contacto` },
       },
       {
         "@type": "Product",
@@ -200,6 +203,7 @@ export default function RootLayout({
         brand: { "@type": "Brand", name: SEO_SITE_NAME },
         category: "Mandarinas",
         keywords: "mandarinas, mandarinas Chile, exportación de mandarinas, comprar mandarinas, fruta chilena",
+        offers: { "@type": "Offer", availability: "https://schema.org/InStock", url: `${SITE_URL}/#contacto` },
       },
       {
         "@type": "FAQPage",
