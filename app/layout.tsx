@@ -48,7 +48,12 @@ export const metadata: Metadata = {
     siteName: SEO_SITE_NAME,
     locale: "es_CL",
     images: [
-      { url: "/flavicon.png", width: 512, height: 512, alt: "Agro South West - Cítricos de Chile para el mundo" },
+      {
+        url: `${SITE_URL}/flavicon.png`,
+        width: 512,
+        height: 512,
+        alt: "Agro South West - Cítricos de Chile para el mundo",
+      },
     ],
   },
   twitter: {
@@ -136,7 +141,7 @@ export default function RootLayout({
         "@type": "LocalBusiness",
         "@id": `${SITE_URL}#localbusiness`,
         name: SEO_SITE_NAME,
-        image: `${SITE_URL}/opengraph-image`,
+        image: `${SITE_URL}/flavicon.png`,
         url: SITE_URL,
         telephone: "+56974265206",
         email: "contacto@agrosouthwest.com",
