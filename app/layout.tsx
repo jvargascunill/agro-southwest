@@ -49,12 +49,6 @@ export const metadata: Metadata = {
     locale: "es_CL",
     images: [
       { url: "/flavicon.png", width: 512, height: 512, alt: "Agro South West - Cítricos de Chile para el mundo" },
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: SEO_DEFAULT_IMAGE_ALT,
-      },
     ],
   },
   twitter: {
