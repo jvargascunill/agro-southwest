@@ -242,6 +242,19 @@ export default function RootLayout({
         ],
       },
       {
+        "@type": "ImageGallery",
+        name: "Galería Agro South West - Campo y exportación de cítricos",
+        description: "Campo, cosecha y proceso de exportación de cítricos desde Chile. Limones, naranjas y mandarinas.",
+        author: { "@id": `${SITE_URL}#organization` },
+        image: [
+          { "@type": "ImageObject", contentUrl: `${SITE_URL}/carousel/01.png`, name: "Agro South West - Campo y cítricos Chile" },
+          { "@type": "ImageObject", contentUrl: `${SITE_URL}/carousel/02.png`, name: "Agro South West - Cítricos frescos exportación" },
+          { "@type": "ImageObject", contentUrl: `${SITE_URL}/carousel/03.png`, name: "Agro South West - Limones y naranjas Chile" },
+          { "@type": "ImageObject", contentUrl: `${SITE_URL}/carousel/04.png`, name: "Agro South West - Proceso exportación cítricos" },
+          { "@type": "ImageObject", contentUrl: `${SITE_URL}/carousel/05.png`, name: "Agro South West - Fruta chilena premium" },
+        ],
+      },
+      {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_URL },
