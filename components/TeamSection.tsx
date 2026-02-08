@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const fadeIn = {
@@ -28,10 +29,12 @@ function TeamCard({
   return (
     <div className="flex max-w-2xl flex-col items-center rounded-2xl border border-accent-gray bg-white p-8 shadow-sm sm:flex-row sm:items-start sm:gap-8 sm:text-left">
       <div className="relative h-32 w-32 flex-shrink-0 overflow-hidden rounded-full bg-accent-gray">
-        <img
+        <Image
           src={imageSrc}
           alt={imageAlt}
-          className="h-full w-full object-cover"
+          fill
+          className="object-cover"
+          sizes="128px"
           onError={(e) => {
             const target = e.currentTarget;
             target.style.display = "none";
