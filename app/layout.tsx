@@ -37,8 +37,8 @@ export const metadata: Metadata = {
   alternates: { canonical: SITE_URL },
   manifest: "/manifest.json",
   icons: {
-    icon: [{ url: "/logo.png", type: "image/png", sizes: "32x32" }, { url: "/logo.png", type: "image/png", sizes: "192x192" }],
-    apple: "/logo.png",
+    icon: [{ url: "/flavicon.png", type: "image/png", sizes: "32x32" }, { url: "/flavicon.png", type: "image/png", sizes: "192x192" }],
+    apple: "/flavicon.png",
   },
   openGraph: {
     title: SEO_TITLE_SHORT,
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: SEO_SITE_NAME,
     locale: "es_CL",
     images: [
-      { url: "/logo.png", width: 512, height: 512, alt: "Agro South West - Logo" },
+      { url: "/flavicon.png", width: 512, height: 512, alt: "Agro South West - Cítricos de Chile para el mundo" },
       {
         url: "/opengraph-image",
         width: 1200,
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: SEO_TITLE_SHORT,
-    description: SEO_META_DESCRIPTION,
+    description: SEO_LONG_DESCRIPTION,
   },
   robots: {
     index: true,

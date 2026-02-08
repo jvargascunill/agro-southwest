@@ -117,22 +117,21 @@ export const SEO_META_DESCRIPTION =
   "Agro South West: exportación de cítricos desde Chile. Limones, naranjas y mandarinas con Global G.A.P. y Systems Approach. Conectando Chile con el mundo. Cotiza ya.";
 
 /**
- * Descripción larga para crawlers de IA, rich snippets y Open Graph.
+ * Descripción larga para crawlers de IA, rich snippets, Open Graph y WhatsApp.
  * Responde: qué es el sitio, qué vende, a quién, dónde, certificaciones.
  */
 export const SEO_LONG_DESCRIPTION =
-  "Agro SouthWest es una empresa chilena de exportación de cítricos frescos: limones, naranjas y mandarinas desde Chile. " +
-  "Exportamos limones chilenos, naranjas y mandarinas con certificación Global G.A.P. y Systems Approach (SAG/USDA). " +
-  "Temporada de exportación de mayo a diciembre; destino Cono Sur (Argentina, Uruguay) por tierra y preparados para otros mercados. " +
-  "Comprar limones, cotizar exportación de cítricos, fruta chilena premium con trazabilidad y documentación fitosanitaria. " +
-  "Contacto: Santiago, Chile. Citrus export, Chilean lemons, orange and tangerine export.";
+  "Agro South West es una empresa chilena de exportación de cítricos frescos: limones, naranjas y mandarinas desde Chile. " +
+  "Exportamos con certificación Global G.A.P. y Systems Approach (SAG/USDA). " +
+  "Temporada de exportación de mayo a diciembre; destino Cono Sur (Argentina, Uruguay) por tierra. " +
+  "Cítricos de Chile para el mundo. Cotiza con nosotros.";
 
 /** Título principal para SEO y redes. Incluye "Agro South West" para búsquedas con 3 palabras. */
 export const SEO_TITLE =
   "Agro South West | Exportación de Cítricos Chile | Limones, Naranjas y Mandarinas";
 
-/** Título alternativo más corto (redes, share) */
-export const SEO_TITLE_SHORT = "Agro South West | Cítricos Chile - Limones y Naranjas";
+/** Título para compartir en WhatsApp, redes y Open Graph */
+export const SEO_TITLE_SHORT = "Agro South West | Cítricos de Chile para el mundo";
 
 export const SEO_SITE_NAME = "Agro South West";
 export const SEO_DEFAULT_IMAGE_ALT =
