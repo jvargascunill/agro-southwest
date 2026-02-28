@@ -1,3 +1,4 @@
+import IntroSplash from "@/components/IntroSplash";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
 import AboutUs from "@/components/AboutUs";
@@ -15,6 +16,7 @@ import CTASection from "@/components/CTASection";
 export default function Home() {
   return (
     <>
+      <IntroSplash />
       <Hero />
       <StatsBar />
       <AboutUs />

@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 :root {
+  /* Primario brillante para textos y acentos, secundarios para fondos */
   --primary: #b8d430;
   --primary-light: #d4e87a;
   --primary-dark: #9bb82a;
-  --secondary: #1a3d2e;
-  --secondary-light: #2d5a47;
+  --secondary: #0f261c;
+  --secondary-light: #1a3d2e;
   --accent-white: #fafbf9;
   --accent-gray: #e8ebe6;
 }

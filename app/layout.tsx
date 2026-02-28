@@ -100,7 +100,6 @@ export default function RootLayout({
         ],
         url: SITE_URL,
         description: SEO_LONG_DESCRIPTION,
-        logo: `${SITE_URL}/logo.png`,
         email: "contacto@agrosouthwest.com",
         telephone: "+56974265206",
         knowsAbout: [
@@ -282,7 +281,6 @@ export default function RootLayout({
               name: "Agro South West",
               alternateName: ["Agro SouthWest", "agro southwest", "agro south west", "agrosouthwest"],
               url: "https://www.agrosouthwest.com/",
-              logo: "https://www.agrosouthwest.com/logo.png",
               description:
                 "Conectando Chile con el Mundo. Logística terrestre y marítima en el Cono Sur.",
               sameAs: ["https://www.instagram.com/agro_southwest/"],

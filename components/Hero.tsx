@@ -21,26 +21,6 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/92 via-secondary/85 to-secondary/96" />
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-4 text-center">
-        {/* Badges de confianza */}
-        <motion.div
-          className="mb-6 flex flex-wrap items-center justify-center gap-2 text-xs font-medium uppercase tracking-wider text-white/90 sm:gap-4 sm:text-sm"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <span className="rounded-full border border-white/40 bg-white/10 px-3 py-1 backdrop-blur-sm">
-            Global G.A.P.
-          </span>
-          <span className="text-white/60">·</span>
-          <span className="rounded-full border border-white/40 bg-white/10 px-3 py-1 backdrop-blur-sm">
-            Systems Approach
-          </span>
-          <span className="text-white/60">·</span>
-          <span className="rounded-full border border-white/40 bg-white/10 px-3 py-1 backdrop-blur-sm">
-            {t("hero.badgeChile")}
-          </span>
-        </motion.div>
-
         <motion.h1
           className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           initial={{ opacity: 0, y: 24 }}

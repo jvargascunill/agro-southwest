@@ -8,7 +8,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const INSTAGRAM_URL = "https://www.instagram.com/Agro_southwest/";
-const LOGO_PATH = "/logo.png";
 
 const navLinks = [
   { href: "#inicio", key: "nav.inicio" },
@@ -21,21 +20,6 @@ const navLinks = [
   { href: "#contacto", key: "nav.contacto" },
 ];
 
-function Logo() {
-  return (
-    <span className="relative flex h-14 w-44 flex-shrink-0 sm:h-16 sm:w-52 md:w-60 lg:w-72">
-      <img
-        src={LOGO_PATH}
-        alt="Agro SouthWest"
-        className="h-full w-full object-cover object-left"
-        loading="eager"
-        fetchPriority="high"
-        decoding="async"
-      />
-    </span>
-  );
-}
-
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { t } = useLanguage();
@@ -47,13 +31,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-accent-gray bg-accent-white/95 backdrop-blur-sm">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 sm:gap-4 sm:px-6 lg:px-8">
-        <Link
-          href="/#inicio"
-          onClick={goToTop}
-          className="flex min-w-0 items-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
-        >
-          <Logo />
-        </Link>
+        <div className="flex min-w-0 items-center" />
 
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
