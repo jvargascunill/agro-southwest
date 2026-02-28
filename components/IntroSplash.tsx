@@ -3,9 +3,13 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useIsMobilePortrait } from "@/hooks/useIsMobilePortrait";
 
 export default function IntroSplash() {
   const { t } = useLanguage();
+  const isMobilePortrait = useIsMobilePortrait();
+  const backgroundImage = isMobilePortrait ? "url(/logo-inicio-mobile.png)" : "url(/hero-logo.png)";
+
   return (
     <section
       className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-secondary"
@@ -15,7 +19,7 @@ export default function IntroSplash() {
       <motion.div
         className="absolute inset-0 bg-contain bg-center bg-no-repeat md:bg-cover"
         style={{
-          backgroundImage: "url(/hero-logo.png)",
+          backgroundImage,
         }}
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
