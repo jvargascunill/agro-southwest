@@ -30,8 +30,11 @@ export const metadata: Metadata = {
   alternates: { canonical: SITE_URL },
   manifest: "/manifest.json",
   icons: {
-    icon: [{ url: "/flavicon.png", type: "image/png", sizes: "32x32" }, { url: "/flavicon.png", type: "image/png", sizes: "192x192" }],
-    apple: "/flavicon.png",
+    icon: [
+      { url: "/flavicon.png?v=2", type: "image/png", sizes: "32x32" },
+      { url: "/flavicon.png?v=2", type: "image/png", sizes: "192x192" },
+    ],
+    apple: "/flavicon.png?v=2",
   },
   openGraph: {
     title: SEO_TITLE_SHORT,
@@ -42,7 +45,7 @@ export const metadata: Metadata = {
     locale: "es_CL",
     images: [
       {
-        url: `${SITE_URL}/flavicon.png`,
+        url: `${SITE_URL}/flavicon.png?v=2`,
         width: 512,
         height: 512,
         alt: "Agro South West - Cítricos de Chile para el mundo",
