@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import ClientProviders from "@/components/ClientProviders";
+
+const tiffany = localFont({
+  src: "../public/fonts/Tiffany.woff",
+  variable: "--font-tiffany",
+  display: "swap",
+});
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -258,11 +265,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="es" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.cdnfonts.com" crossOrigin="anonymous" />
-        <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/tiffany" />
-      </head>
+    <html lang="es" suppressHydrationWarning className={tiffany.variable}>
       <body className="min-h-screen flex flex-col font-sans">
         <script
           type="application/ld+json"
