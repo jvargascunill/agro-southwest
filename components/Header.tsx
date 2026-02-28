@@ -12,9 +12,9 @@ const INSTAGRAM_URL = "https://www.instagram.com/Agro_southwest/";
 const navLinks = [
   { href: "#inicio", key: "nav.inicio" },
   { href: "#nosotros", key: "nav.nosotros" },
+  { href: "#sostenibilidad", key: "nav.sostenibilidad" },
   { href: "#productos", key: "nav.productos" },
   { href: "#mercados", key: "nav.mercados" },
-  { href: "#sostenibilidad", key: "nav.sostenibilidad" },
   { href: "#instagram", key: "nav.instagram" },
   { href: "#faq", key: "nav.faq" },
   { href: "#contacto", key: "nav.contacto" },
@@ -30,22 +30,22 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-accent-gray bg-accent-white/95 backdrop-blur-sm">
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 sm:gap-4 sm:px-6 lg:px-8">
-        <div className="flex min-w-0 items-center" />
+      <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-4 sm:h-16 sm:gap-4 sm:px-6 lg:px-8">
+        <div className="hidden flex-1 md:block" />
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden flex-1 items-center justify-center gap-6 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-secondary/90 transition hover:text-primary-dark"
+              className="text-lg font-medium text-secondary/90 transition hover:text-primary-dark"
             >
               {t(link.key)}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden flex-1 items-center justify-end gap-3 md:flex">
           <LanguageSwitcher />
           <a
             href={INSTAGRAM_URL}

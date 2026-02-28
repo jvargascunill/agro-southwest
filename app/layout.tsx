@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientProviders from "@/components/ClientProviders";
 import Header from "@/components/Header";
@@ -16,12 +15,6 @@ import {
   SEO_SITE_NAME,
   SEO_DEFAULT_IMAGE_ALT,
 } from "@/lib/seo";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -265,7 +258,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="es" className={inter.variable} suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <body className="min-h-screen flex flex-col font-sans">
         <script
           type="application/ld+json"

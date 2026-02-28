@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Quote, Languages } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { TeamCard } from "@/components/TeamSection";
 
 type Testimonial = {
   id: string;
@@ -115,26 +116,6 @@ export default function TestimonialSection() {
           </h2>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-3 pb-6">
-          <button
-            type="button"
-            onClick={() => {
-              const allInSpanish = testimonials.every((x) => showSpanish[x.id] || x.lang === "es");
-              if (allInSpanish) {
-                setShowSpanish({});
-              } else {
-                setShowSpanish(testimonials.reduce<Record<string, boolean>>((acc, x) => ({ ...acc, [x.id]: true }), {}));
-              }
-            }}
-            className="inline-flex items-center gap-2 rounded-full border border-primary-dark/30 bg-white px-4 py-2 text-sm font-medium text-primary-dark shadow-sm transition hover:bg-primary/10"
-          >
-            <Languages className="h-4 w-4" />
-            {testimonials.every((x) => showSpanish[x.id] || x.lang === "es")
-              ? t("testimonial.showAllOriginals")
-              : t("testimonial.translateAllToSpanish")}
-          </button>
-        </div>
-
         <div className="mt-8 grid gap-8 sm:grid-cols-2">
           {testimonials.map((testimonial) => {
             const { quote, location, lang } = getTestimonialContent(
@@ -184,6 +165,33 @@ export default function TestimonialSection() {
             );
           })}
         </div>
+
+        <motion.div
+          className="mt-16 flex flex-col items-center"
+          {...fadeIn}
+        >
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
+            {t("about.teamLabel")}
+          </p>
+          <div className="mt-8 grid w-full min-w-0 gap-8 sm:grid-cols-2 [&>*]:min-w-0">
+            <TeamCard
+              imageSrc="/team/javier-vargas.png"
+              imageAlt={t("about.javierName")}
+              name={t("about.javierName")}
+              role={t("about.javierRole")}
+              bio={t("about.javierBio")}
+              fallbackInitials="JVC"
+            />
+            <TeamCard
+              imageSrc="/team/felipe-zurita.png?v=2"
+              imageAlt={t("about.felipeName")}
+              name={t("about.felipeName")}
+              role={t("about.felipeRole")}
+              bio={t("about.felipeBio")}
+              fallbackInitials="FZ"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

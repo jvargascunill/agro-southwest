@@ -22,13 +22,6 @@ const CAROUSEL_IMAGES: { src: string; alt: string }[] = [
   { src: "/carousel/14.png", alt: "Galería Agro South West - Cítricos 14" },
 ];
 
-const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.5 },
-};
-
 export default function GalleryCarousel() {
   const { t } = useLanguage();
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -45,18 +38,17 @@ export default function GalleryCarousel() {
   return (
     <section className="bg-accent-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div className="text-center" {...fadeIn}>
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
-            {t("gallery.title")}
-          </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
             {t("gallery.subtitle")}
           </h2>
-          <p className="mx-auto mt-2 max-w-md text-lg text-secondary/80">
-            {t("gallery.description")}
-          </p>
         </motion.div>
-
         <motion.div
           className="relative mt-12"
           initial={{ opacity: 0, y: 24 }}

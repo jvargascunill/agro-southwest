@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, Leaf, Sprout } from "lucide-react";
+import { Handshake, Leaf, Ship } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const fadeIn = {
@@ -12,9 +12,9 @@ const fadeIn = {
 };
 
 const certKeys = [
-  { titleKey: "certs.globalgap", descKey: "certs.globalgapDesc", icon: Shield },
+  { titleKey: "certs.globalgap", descKey: "certs.globalgapDesc", icon: Handshake },
   { titleKey: "certs.systems", descKey: "certs.systemsDesc", icon: Leaf },
-  { titleKey: "certs.sustainability", descKey: "certs.sustainabilityDesc", icon: Sprout },
+  { titleKey: "certs.sustainability", descKey: "certs.sustainabilityDesc", icon: Ship },
 ];
 
 export default function Certifications() {
@@ -23,10 +23,7 @@ export default function Certifications() {
     <section id="sostenibilidad" className="bg-secondary py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            {t("certs.label")}
-          </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             {t("certs.title")}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/85">
@@ -34,20 +31,22 @@ export default function Certifications() {
           </p>
         </motion.div>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-3">
+        <div className="mt-14 grid gap-8 md:grid-cols-3 md:items-stretch">
           {certKeys.map(({ titleKey, descKey, icon: Icon }) => (
             <motion.div
               key={titleKey}
-              className="flex flex-col items-center rounded-2xl border border-white/20 bg-white/5 p-8 text-center backdrop-blur-sm"
+              className="flex h-full flex-col items-center rounded-2xl border border-white/20 bg-white/5 p-8 text-center backdrop-blur-sm"
               {...fadeIn}
             >
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/20 text-primary">
+              <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
                 <Icon className="h-8 w-8" />
               </div>
-              <h3 className="mt-5 text-xl font-semibold text-white">
-                {t(titleKey)}
-              </h3>
-              <p className="mt-2 text-white/80">{t(descKey)}</p>
+              <div className="mt-5 flex min-h-0 flex-1 flex-col">
+                <h3 className="min-h-[4.5rem] flex-shrink-0 text-xl font-semibold text-white">
+                  {t(titleKey)}
+                </h3>
+                <p className="mt-2 flex-1 text-center text-white/80">{t(descKey)}</p>
+              </div>
             </motion.div>
           ))}
         </div>

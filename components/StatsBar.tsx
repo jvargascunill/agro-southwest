@@ -26,7 +26,7 @@ export default function StatsBar() {
           {stats.map(({ value, labelKey, sublabelKey, icon: Icon }) => (
             <motion.div
               key={labelKey}
-              className="flex flex-col items-center text-center sm:border-r sm:border-white/10 sm:last:border-r-0"
+              className="flex flex-col items-center text-center"
               {...fadeIn}
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary sm:h-14 sm:w-14">

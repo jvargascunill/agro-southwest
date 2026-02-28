@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Leaf, Target, Users } from "lucide-react";
+import { Lightbulb, Target, Users } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import GalleryCarousel from "@/components/GalleryCarousel";
 
@@ -21,65 +21,65 @@ export default function AboutUs() {
           className="text-center"
           {...fadeIn}
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
-            {t("about.label")}
-          </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
             {t("about.title")}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-secondary/80">
-            {t("about.description")}
-          </p>
         </motion.div>
 
-        <div className="mt-16 grid gap-12 md:grid-cols-3">
+        <div className="mt-16 grid gap-12 md:grid-cols-3 md:items-stretch">
           <motion.div
-            className="flex flex-col items-center rounded-2xl border border-accent-gray bg-white p-8 shadow-sm"
+            className="flex h-full flex-col items-center rounded-2xl border border-accent-gray bg-white p-8 shadow-sm"
             {...fadeIn}
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/20 text-primary-dark">
-              <Leaf className="h-7 w-7" />
+            <div className="flex h-14 w-14 min-h-14 min-w-14 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary-dark">
+              <Target className="h-7 w-7 shrink-0" />
             </div>
-            <h3 className="mt-4 text-xl font-semibold text-secondary">
-              {t("about.origin")}
-            </h3>
-            <p className="mt-2 text-center text-secondary/80">
-              {t("about.originDesc")}
-            </p>
+            <div className="mt-4 flex min-h-0 flex-1 flex-col">
+              <h3 className="min-h-[3.5rem] text-center text-xl font-semibold text-secondary">
+                {t("about.origin")}
+              </h3>
+              <p className="mt-2 flex-1 text-center text-secondary/80">
+                {t("about.originDesc")}
+              </p>
+            </div>
           </motion.div>
 
           <motion.div
-            className="flex flex-col items-center rounded-2xl border border-accent-gray bg-white p-8 shadow-sm"
+            className="flex h-full flex-col items-center rounded-2xl border border-accent-gray bg-white p-8 shadow-sm"
             {...fadeIn}
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/20 text-primary-dark">
-              <Target className="h-7 w-7" />
+            <div className="flex h-14 w-14 min-h-14 min-w-14 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary-dark">
+              <Lightbulb className="h-7 w-7 shrink-0" />
             </div>
-            <h3 className="mt-4 text-xl font-semibold text-secondary">
-              {t("about.mission")}
-            </h3>
-            <p className="mt-2 text-center text-secondary/80">
-              {t("about.missionDesc")}
-            </p>
+            <div className="mt-4 flex min-h-0 flex-1 flex-col">
+              <h3 className="min-h-[3.5rem] text-center text-xl font-semibold text-secondary">
+                {t("about.mission")}
+              </h3>
+              <p className="mt-2 flex-1 text-center text-secondary/80">
+                {t("about.missionDesc")}
+              </p>
+            </div>
           </motion.div>
 
           <motion.div
-            className="flex flex-col items-center rounded-2xl border border-accent-gray bg-white p-8 shadow-sm"
+            className="flex h-full flex-col items-center rounded-2xl border border-accent-gray bg-white p-8 shadow-sm"
             {...fadeIn}
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/20 text-primary-dark">
-              <Users className="h-7 w-7" />
+            <div className="flex h-14 w-14 min-h-14 min-w-14 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary-dark">
+              <Users className="h-7 w-7 shrink-0" />
             </div>
-            <h3 className="mt-4 text-xl font-semibold text-secondary">
-              {t("about.commitment")}
-            </h3>
-            <p className="mt-2 text-center text-secondary/80">
-              {t("about.commitmentDesc")}
-            </p>
+            <div className="mt-4 flex min-h-0 flex-1 flex-col">
+              <h3 className="min-h-[3.5rem] text-center text-xl font-semibold text-secondary">
+                {t("about.commitment")}
+              </h3>
+              <p className="mt-2 flex-1 text-center text-secondary/80">
+                {t("about.commitmentDesc")}
+              </p>
+            </div>
           </motion.div>
         </div>
 
-        <div className="mt-20">
+        <div className="mt-10">
           <GalleryCarousel />
         </div>
       </div>

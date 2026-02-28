@@ -1,12 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, FileCheck, Truck, PackageCheck } from "lucide-react";
+import { Truck, PackageCheck } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const stepKeys = [
-  { icon: MessageCircle, titleKey: "process.step1", descKey: "process.step1Desc" },
-  { icon: FileCheck, titleKey: "process.step2", descKey: "process.step2Desc" },
   { icon: Truck, titleKey: "process.step3", descKey: "process.step3Desc" },
   { icon: PackageCheck, titleKey: "process.step4", descKey: "process.step4Desc" },
 ];
@@ -23,19 +21,7 @@ export default function ProcessSection() {
   return (
     <section id="proceso" className="bg-accent-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div className="text-center" {...fadeIn}>
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
-            {t("process.label")}
-          </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
-            {t("process.title")}
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-secondary/80">
-            {t("process.description")}
-          </p>
-        </motion.div>
-
-        <div className="mt-16 grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:gap-8 sm:grid-cols-2">
           {stepKeys.map((step, i) => (
             <motion.div
               key={step.titleKey}

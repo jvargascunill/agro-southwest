@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Truck, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const fadeIn = {
@@ -11,9 +11,72 @@ const fadeIn = {
   transition: { duration: 0.5 },
 };
 
+function ArgentinaFlagIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      className={className}
+      aria-hidden
+    >
+      <rect width="32" height="10.67" fill="#75AADB" />
+      <rect y="10.67" width="32" height="10.67" fill="#fff" />
+      <rect y="21.33" width="32" height="10.67" fill="#75AADB" />
+      <circle cx="16" cy="16" r="4" fill="#F4B719" />
+      <g fill="none" stroke="#F4B719" strokeWidth="0.5">
+        {[...Array(16)].map((_, i) => {
+          const a = (i * 22.5 * Math.PI) / 180;
+          const r1 = 3.2;
+          const r2 = 4.5;
+          return (
+            <line
+              key={i}
+              x1={16 + r1 * Math.cos(a)}
+              y1={16 + r1 * Math.sin(a)}
+              x2={16 + r2 * Math.cos(a)}
+              y2={16 + r2 * Math.sin(a)}
+            />
+          );
+        })}
+      </g>
+    </svg>
+  );
+}
+
+function UruguayFlagIcon({ className }: { className?: string }) {
+  const h = 32 / 9;
+  const stripes = [
+    "#fff", "#5B9BD5", "#fff", "#5B9BD5", "#fff", "#5B9BD5", "#fff", "#5B9BD5", "#fff",
+  ];
+  return (
+    <svg viewBox="0 0 32 32" className={className} aria-hidden>
+      {stripes.map((fill, i) => (
+        <rect key={i} y={i * h} width="32" height={h} fill={fill} />
+      ))}
+      <rect width="10.67" height="10.67" fill="#fff" />
+      <circle cx="5.33" cy="5.33" r="2.8" fill="#F4B719" />
+      <g fill="none" stroke="#F4B719" strokeWidth="0.4">
+        {[...Array(16)].map((_, i) => {
+          const a = (i * 22.5 * Math.PI) / 180;
+          const r1 = 2.2;
+          const r2 = 3.2;
+          return (
+            <line
+              key={i}
+              x1={5.33 + r1 * Math.cos(a)}
+              y1={5.33 + r1 * Math.sin(a)}
+              x2={5.33 + r2 * Math.cos(a)}
+              y2={5.33 + r2 * Math.sin(a)}
+            />
+          );
+        })}
+      </g>
+    </svg>
+  );
+}
+
 const markets = [
-  { name: "Argentina", modeKey: "markets.modeTerrestrial", icon: Truck },
-  { name: "Uruguay", modeKey: "markets.modeTerrestrial", icon: Truck },
+  { name: "Argentina", modeKey: "markets.modeTerrestrial", icon: ArgentinaFlagIcon, isFlag: true },
+  { name: "Uruguay", modeKey: "markets.modeTerrestrial", icon: UruguayFlagIcon, isFlag: true },
 ];
 
 export default function Markets() {
@@ -22,10 +85,7 @@ export default function Markets() {
     <section id="mercados" className="bg-accent-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
-            {t("markets.label")}
-          </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
             {t("markets.title")}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-secondary/80">
@@ -34,24 +94,27 @@ export default function Markets() {
         </motion.div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
-          {markets.map(({ name, modeKey, icon: Icon }) => (
+          {markets.map((market) => {
+          const Icon = market.icon;
+          return (
             <motion.div
-              key={name}
+              key={market.name}
               className="flex flex-col items-center rounded-2xl border border-accent-gray bg-white p-8 shadow-sm transition hover:border-primary/30 hover:shadow-md"
               {...fadeIn}
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/20 text-primary-dark">
-                <Icon className="h-7 w-7" />
+              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-primary/20 text-primary-dark">
+                <Icon className={market.isFlag ? "h-8 w-8" : "h-7 w-7"} />
               </div>
               <h3 className="mt-4 text-xl font-semibold text-secondary">
-                {name}
+                {market.name}
               </h3>
               <p className="mt-1 flex items-center gap-1.5 text-sm text-secondary/70">
                 <MapPin className="h-4 w-4" />
-                {t(modeKey)}
+                {t(market.modeKey)}
               </p>
             </motion.div>
-          ))}
+          );
+        })}
         </div>
 
         <motion.div

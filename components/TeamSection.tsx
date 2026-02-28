@@ -11,7 +11,7 @@ const fadeIn = {
   transition: { duration: 0.5 },
 };
 
-function TeamCard({
+export function TeamCard({
   imageSrc,
   imageAlt,
   name,
@@ -27,14 +27,14 @@ function TeamCard({
   fallbackInitials: string;
 }) {
   return (
-    <div className="flex max-w-2xl flex-col items-center rounded-2xl border border-accent-gray bg-white p-8 shadow-sm sm:flex-row sm:items-start sm:gap-8 sm:text-left">
-      <div className="relative h-32 w-32 flex-shrink-0 overflow-hidden rounded-full bg-accent-gray">
+    <div className="flex min-w-0 max-w-2xl flex-col overflow-hidden rounded-2xl border border-accent-gray bg-white p-8 shadow-sm md:flex-row md:items-start md:gap-8 md:text-left">
+      <div className="relative mx-auto h-52 w-40 flex-shrink-0 overflow-hidden rounded-lg bg-accent-gray md:mx-0">
         <Image
           src={imageSrc}
           alt={imageAlt}
           fill
           className="object-cover"
-          sizes="128px"
+          sizes="160px"
           onError={(e) => {
             const target = e.currentTarget;
             target.style.display = "none";
@@ -50,10 +50,10 @@ function TeamCard({
           {fallbackInitials}
         </span>
       </div>
-      <div className="mt-6 sm:mt-0">
+      <div className="mt-6 w-full min-w-0 flex-1 text-left md:mt-0">
         <h3 className="text-xl font-semibold text-secondary">{name}</h3>
         <p className="mt-1 text-sm font-medium text-primary-dark">{role}</p>
-        <p className="mt-4 text-secondary/80">{bio}</p>
+        <p className="mt-4 break-words text-secondary/80">{bio}</p>
       </div>
     </div>
   );
