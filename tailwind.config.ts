@@ -26,7 +26,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-tiffany)", "Tiffany", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "Times New Roman", "Times", "serif"],
       },
     },
   },

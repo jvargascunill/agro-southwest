@@ -2,15 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fuente Tiffany: servida desde public/ para que cargue igual en local y Vercel */
-@font-face {
-  font-family: "Tiffany";
-  src: url("/fonts/Tiffany.woff") format("woff");
-  font-display: swap;
-}
-
 :root {
-  --font-tiffany: "Tiffany", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Times New Roman", "Times", serif;
   /* Primario brillante para textos y acentos, secundarios para fondos */
   --primary: #b8d430;
   --primary-light: #d4e87a;
