@@ -4,7 +4,7 @@ import "./globals.css";
 import ClientProviders from "@/components/ClientProviders";
 
 const tiffany = localFont({
-  src: "../public/fonts/Tiffany.woff",
+  src: "./fonts/Tiffany.woff",
   variable: "--font-tiffany",
   display: "swap",
 });
