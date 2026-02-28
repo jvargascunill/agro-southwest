@@ -31,8 +31,18 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-accent-gray bg-accent-white/95 backdrop-blur-sm">
       <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-4 sm:h-16 sm:gap-4 sm:px-6 lg:px-8">
+        <button
+          type="button"
+          className="rounded p-2 text-secondary md:hidden"
+          onClick={() => setOpen(!open)}
+          aria-label="Abrir menú"
+        >
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+        <div className="flex flex-1 justify-end md:hidden">
+          <LanguageSwitcher />
+        </div>
         <div className="hidden flex-1 md:block" />
-
         <nav className="hidden flex-1 items-center justify-center gap-6 md:flex">
           {navLinks.map((link) => (
             <Link
@@ -63,15 +73,6 @@ export default function Header() {
             {t("nav.cotizar")}
           </Link>
         </div>
-
-        <button
-          type="button"
-          className="rounded p-2 text-secondary md:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Abrir menú"
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
       </div>
 
       <AnimatePresence>
@@ -83,9 +84,6 @@ export default function Header() {
             className="overflow-hidden border-t border-accent-gray bg-accent-white md:hidden"
           >
             <nav className="flex flex-col gap-1 px-4 py-4">
-              <div className="mb-2 flex justify-end">
-                <LanguageSwitcher />
-              </div>
               {navLinks.map((link) => (
                 <Link
                   key={link.href}

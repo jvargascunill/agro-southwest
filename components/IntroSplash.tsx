@@ -13,12 +13,9 @@ export default function IntroSplash() {
       aria-label="Agro SouthWest"
     >
       <motion.div
-        className="absolute inset-0"
+        className="absolute inset-0 bg-contain bg-center bg-no-repeat md:bg-cover"
         style={{
           backgroundImage: "url(/hero-logo.png)",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
         }}
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -33,14 +30,14 @@ export default function IntroSplash() {
       />
 
       <motion.div
-        className="relative z-10 mt-auto flex flex-wrap items-center justify-center gap-4 pb-24"
+        className="relative z-10 mt-auto flex flex-wrap items-center justify-center gap-4 pb-14"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}
       >
         <Link
           href="#contacto"
-          className="rounded-full border-2 border-primary bg-transparent px-7 py-3.5 text-sm font-semibold text-primary transition hover:bg-primary/20"
+          className="rounded-full border-2 border-primary bg-transparent px-5 py-2.5 text-xs font-semibold text-primary transition hover:bg-primary/20 sm:px-6 sm:py-3 sm:text-sm"
         >
           {t("hero.ctaContact")}
         </Link>

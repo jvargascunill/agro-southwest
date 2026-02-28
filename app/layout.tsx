@@ -266,7 +266,7 @@ export default function RootLayout({
 
   return (
     <html lang="es" suppressHydrationWarning className={tiffany.variable}>
-      <body className="min-h-screen flex flex-col font-sans">
+      <body className="min-h-screen flex flex-col font-sans font-normal">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
