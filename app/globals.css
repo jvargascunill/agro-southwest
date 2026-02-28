@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  @apply bg-accent-white text-secondary antialiased;
+  @apply bg-accent-white font-sans text-secondary antialiased;
 }
 
 /* Section label: small caps, brand color */

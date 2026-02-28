@@ -259,6 +259,10 @@ export default function RootLayout({
 
   return (
     <html lang="es" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.cdnfonts.com" crossOrigin="anonymous" />
+        <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/tiffany" />
+      </head>
       <body className="min-h-screen flex flex-col font-sans">
         <script
           type="application/ld+json"
