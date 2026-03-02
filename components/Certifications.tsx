@@ -26,7 +26,7 @@ export default function Certifications() {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("certs.title")}
           </h2>
-          <p className="mx-auto mt-4 max-w-4xl text-lg leading-loose text-white/85">
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-loose text-white/85 md:max-w-7xl">
             {t("certs.description")}
           </p>
         </motion.div>

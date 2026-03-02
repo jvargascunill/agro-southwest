@@ -29,7 +29,7 @@ export default function Hero() {
           {t("hero.title")}
         </motion.h1>
         <motion.p
-          className="mx-auto mt-6 max-w-4xl text-base leading-loose text-white/90 sm:text-lg"
+          className="mx-auto mt-6 max-w-2xl text-base leading-loose text-white/90 sm:text-lg md:max-w-7xl"
           initial={{ opacity: 0, y: 20, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.75, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
