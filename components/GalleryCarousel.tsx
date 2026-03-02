@@ -12,7 +12,6 @@ const CAROUSEL_IMAGES: { src: string; alt: string }[] = [
   { src: "/carousel/03.png", alt: "Agro South West - Limones y naranjas Chile" },
   { src: "/carousel/04.png", alt: "Agro South West - Proceso exportación cítricos" },
   { src: "/carousel/05.png", alt: "Agro South West - Fruta chilena premium" },
-  { src: "/carousel/06.png", alt: "Galería Agro South West - Cítricos 6" },
   { src: "/carousel/07.png", alt: "Galería Agro South West - Cítricos 7" },
   { src: "/carousel/08.png", alt: "Galería Agro South West - Cítricos 8" },
   { src: "/carousel/09.png", alt: "Galería Agro South West - Cítricos 9" },

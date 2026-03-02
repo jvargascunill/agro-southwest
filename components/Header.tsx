@@ -66,12 +66,6 @@ export default function Header() {
           >
             <Instagram className="h-5 w-5" />
           </a>
-          <Link
-            href="#contacto"
-            className="inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-secondary shadow-sm transition hover:bg-primary-dark hover:text-secondary-dark"
-          >
-            {t("nav.cotizar")}
-          </Link>
         </div>
       </div>
 
@@ -104,13 +98,6 @@ export default function Header() {
                 <Instagram className="h-5 w-5" />
                 Instagram
               </a>
-              <Link
-                href="#contacto"
-                className="mt-2 rounded-full bg-primary px-4 py-2.5 text-center text-sm font-semibold text-secondary"
-                onClick={() => setOpen(false)}
-              >
-                {t("nav.cotizar")}
-              </Link>
             </nav>
           </motion.div>
         )}
