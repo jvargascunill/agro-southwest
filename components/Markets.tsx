@@ -102,8 +102,8 @@ export default function Markets() {
               className="flex flex-col items-center rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm transition hover:border-primary/40 hover:shadow-md"
               {...fadeIn}
             >
-              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-primary/20 text-primary">
-                <Icon className={market.isFlag ? "h-8 w-8" : "h-7 w-7"} />
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-primary/20 text-primary sm:h-14 sm:w-14">
+                <Icon className={market.isFlag ? "h-6 w-6 sm:h-8 sm:w-8" : "h-5 w-5 sm:h-7 sm:w-7"} />
               </div>
               <h3 className="mt-4 text-xl font-semibold text-white">
                 {market.name}

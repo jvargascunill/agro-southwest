@@ -38,8 +38,8 @@ export default function Certifications() {
               className="flex h-full flex-col items-center rounded-2xl border border-white/20 bg-white/5 p-8 text-center backdrop-blur-sm"
               {...fadeIn}
             >
-              <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
-                <Icon className="h-8 w-8" />
+              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary sm:h-16 sm:w-16">
+                <Icon className="h-5 w-5 sm:h-8 sm:w-8" />
               </div>
               <div className="mt-5 flex min-h-0 flex-1 flex-col">
                 <h3 className="min-h-[4.5rem] flex-shrink-0 text-xl font-semibold text-white">

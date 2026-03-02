@@ -69,16 +69,16 @@ export default function ProductSpecs() {
                   {specKeys.map(({ icon: Icon, labelKey, valueKey }) => (
                     <div
                       key={labelKey}
-                      className="flex items-start gap-4 rounded-xl bg-white/5 p-4 border border-white/10"
+                      className="flex items-start gap-3 rounded-xl bg-white/5 p-3 border border-white/10 sm:gap-4 sm:p-4"
                     >
-                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
-                        <Icon className="h-6 w-6" />
+                      <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary sm:h-12 sm:w-12">
+                        <Icon className="h-4 w-4 sm:h-6 sm:w-6" />
                       </div>
-                      <div>
+                      <div className="min-w-0 flex-1">
                         <p className="text-sm font-medium text-white/70">
                           {t(labelKey)}
                         </p>
-                        <p className="text-lg font-semibold text-white">
+                        <p className="text-base font-semibold text-white sm:text-lg">
                           {t(valueKey)}
                         </p>
                       </div>
@@ -90,7 +90,7 @@ export default function ProductSpecs() {
             {/* Texto de variedad debajo de la fila tarjetas + foto */}
             <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-white/20 pt-8">
               <div className="flex items-center gap-2 rounded-full bg-primary/20 px-4 py-2">
-                <Sparkles className="h-5 w-5 text-primary" />
+                <Sparkles className="h-4 w-4 text-primary sm:h-5 sm:w-5" />
                 <span className="text-sm font-medium text-white">
                   {t("product.skin")}
                 </span>

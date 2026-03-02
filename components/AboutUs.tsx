@@ -30,8 +30,8 @@ export default function AboutUs() {
             className="flex h-full flex-col items-center rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm"
             {...fadeIn}
           >
-            <div className="flex h-14 w-14 min-h-14 min-w-14 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
-              <Target className="h-7 w-7 shrink-0" />
+            <div className="flex h-10 w-10 min-h-10 min-w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary sm:h-14 sm:min-h-14 sm:min-w-14 sm:w-14">
+              <Target className="h-5 w-5 shrink-0 sm:h-7 sm:w-7" />
             </div>
             <div className="mt-4 flex min-h-0 flex-1 flex-col">
               <h3 className="min-h-[3.5rem] text-center text-xl font-semibold text-white">
@@ -47,8 +47,8 @@ export default function AboutUs() {
             className="flex h-full flex-col items-center rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm"
             {...fadeIn}
           >
-            <div className="flex h-14 w-14 min-h-14 min-w-14 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
-              <Lightbulb className="h-7 w-7 shrink-0" />
+            <div className="flex h-10 w-10 min-h-10 min-w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary sm:h-14 sm:min-h-14 sm:min-w-14 sm:w-14">
+              <Lightbulb className="h-5 w-5 shrink-0 sm:h-7 sm:w-7" />
             </div>
             <div className="mt-4 flex min-h-0 flex-1 flex-col">
               <h3 className="min-h-[3.5rem] text-center text-xl font-semibold text-white">
@@ -64,8 +64,8 @@ export default function AboutUs() {
             className="flex h-full flex-col items-center rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm"
             {...fadeIn}
           >
-            <div className="flex h-14 w-14 min-h-14 min-w-14 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
-              <Users className="h-7 w-7 shrink-0" />
+            <div className="flex h-10 w-10 min-h-10 min-w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary sm:h-14 sm:min-h-14 sm:min-w-14 sm:w-14">
+              <Users className="h-5 w-5 shrink-0 sm:h-7 sm:w-7" />
             </div>
             <div className="mt-4 flex min-h-0 flex-1 flex-col">
               <h3 className="min-h-[3.5rem] text-center text-xl font-semibold text-white">
