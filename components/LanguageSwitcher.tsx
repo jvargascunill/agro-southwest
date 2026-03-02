@@ -40,7 +40,7 @@ export default function LanguageSwitcher() {
       </button>
       {open && (
         <ul
-          className="absolute right-0 top-full z-50 mt-1 min-w-[6rem] rounded-lg border border-accent-gray bg-white py-1 shadow-lg"
+          className="absolute right-0 top-full z-50 mt-1 min-w-[6rem] rounded-lg border border-white/20 bg-[#1A342B] py-1 shadow-lg"
           role="listbox"
         >
           {locales.map((l) => (
@@ -52,7 +52,7 @@ export default function LanguageSwitcher() {
                   setOpen(false);
                 }}
                 className={`block w-full px-4 py-2 text-left text-sm hover:bg-white/10 ${
-                  locale === l.code ? "bg-primary/20 font-medium text-primary" : "text-white"
+                  locale === l.code ? "bg-white/15 font-medium text-white" : "text-white/90"
                 }`}
               >
                 {l.label}
