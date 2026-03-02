@@ -18,56 +18,7 @@ type Testimonial = {
   lang: "en" | "zh" | "es";
 };
 
-const testimonials: Testimonial[] = [
-  {
-    id: "1",
-    lang: "es",
-    quoteEn: "",
-    quoteZh: "",
-    quoteEs:
-      "Trabajar con Agro SouthWest nos dio la seguridad de recibir un producto con trazabilidad y documentación en orden. La comunicación fue fluida en todo el proceso.",
-    author: "Gerente de compras, Argentina",
-    locationEn: "",
-    locationZh: "",
-    locationEs: "Córdoba, Argentina",
-  },
-  {
-    id: "2",
-    lang: "es",
-    quoteEn: "",
-    quoteZh: "",
-    quoteEs:
-      "Llevamos dos temporadas abasteciéndonos de cítricos con Agro SouthWest. Calidad confiable, entrega a tiempo y equipo profesional. Lo recomendamos para quien busque suministro contraestacional en el Cono Sur.",
-    author: "Director de compras, Argentina",
-    locationEn: "",
-    locationZh: "",
-    locationEs: "Córdoba, Argentina",
-  },
-  {
-    id: "3",
-    lang: "es",
-    quoteEn: "",
-    quoteZh: "",
-    quoteEs:
-      "La colaboración con Agro SouthWest fue muy fluida. La calidad del producto es estable, llegó en buen estado y la documentación estuvo completa. Seguiremos comprando.",
-    author: "Importador, Uruguay",
-    locationEn: "",
-    locationZh: "",
-    locationEs: "Montevideo, Uruguay",
-  },
-  {
-    id: "4",
-    lang: "es",
-    quoteEn: "",
-    quoteZh: "",
-    quoteEs:
-      "La ventana de suministro de cítricos chilenos complementa muy bien nuestra temporada. Agro SouthWest responde rápido, las cotizaciones son claras y la experiencia de cooperación es muy buena.",
-    author: "Encargado de abastecimiento, Uruguay",
-    locationEn: "",
-    locationZh: "",
-    locationEs: "Montevideo, Uruguay",
-  },
-];
+const testimonials: Testimonial[] = [];
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -105,18 +56,20 @@ export default function TestimonialSection() {
   };
 
   return (
-    <section className="bg-accent-gray py-14 sm:py-20">
+    <section className="bg-secondary py-14 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <motion.div className="text-center" {...fadeIn}>
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
-            {t("testimonial.sectionLabel")}
-          </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
-            {t("testimonial.title")}
-          </h2>
-        </motion.div>
+        {testimonials.length > 0 && (
+          <>
+            <motion.div className="text-center" {...fadeIn}>
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+                {t("testimonial.sectionLabel")}
+              </p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                {t("testimonial.title")}
+              </h2>
+            </motion.div>
 
-        <div className="mt-8 grid gap-8 sm:grid-cols-2">
+            <div className="mt-8 grid gap-8 sm:grid-cols-2">
           {testimonials.map((testimonial) => {
             const { quote, location, lang } = getTestimonialContent(
               testimonial,
@@ -130,20 +83,20 @@ export default function TestimonialSection() {
             return (
               <motion.div
                 key={testimonial.id}
-                className="relative rounded-2xl border border-accent-gray bg-white p-8 shadow-lg"
+                className="relative rounded-2xl border border-white/20 bg-white/5 p-8 shadow-lg backdrop-blur-sm"
                 {...fadeIn}
               >
                 <Quote className="absolute left-6 top-6 h-10 w-10 text-primary/20" />
                 <blockquote className="relative pt-4" lang={lang}>
-                  <p className="text-base leading-relaxed text-secondary sm:text-lg">
+                  <p className="text-base leading-relaxed text-white sm:text-lg">
                     {quote}
                   </p>
                   <footer className="mt-6">
-                    <p className="font-semibold text-secondary">
+                    <p className="font-semibold text-white">
                       {testimonial.author}
                     </p>
                     {location && (
-                      <p className="mt-1 text-sm text-secondary/70">
+                      <p className="mt-1 text-sm text-white/70">
                         {location}
                       </p>
                     )}
@@ -153,7 +106,7 @@ export default function TestimonialSection() {
                   <button
                     type="button"
                     onClick={() => toggleSpanish(testimonial.id)}
-                    className="mt-4 flex items-center gap-2 text-sm font-medium text-primary-dark hover:underline"
+                    className="mt-4 flex items-center gap-2 text-sm font-medium text-primary hover:underline"
                   >
                     <Languages className="h-4 w-4" />
                     {isShowingSpanish
@@ -163,16 +116,18 @@ export default function TestimonialSection() {
                 )}
               </motion.div>
             );
-          })}
-        </div>
+              })}
+            </div>
+          </>
+        )}
 
         <motion.div
-          className="mt-16 flex flex-col items-center"
+          className="mt-16 flex flex-col items-center text-center"
           {...fadeIn}
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("about.teamLabel")}
-          </p>
+          </h2>
           <div className="mt-8 grid w-full min-w-0 gap-8 sm:grid-cols-2 [&>*]:min-w-0">
             <TeamCard
               imageSrc="/team/javier-vargas.png"

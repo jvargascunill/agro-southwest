@@ -35,7 +35,7 @@ export default function GalleryCarousel() {
   };
 
   return (
-    <section className="bg-accent-white py-14 sm:py-20">
+    <section className="bg-secondary py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center"
@@ -44,7 +44,7 @@ export default function GalleryCarousel() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("gallery.subtitle")}
           </h2>
         </motion.div>
@@ -62,7 +62,7 @@ export default function GalleryCarousel() {
             {CAROUSEL_IMAGES.map((img, i) => (
               <div
                 key={img.src}
-                className="relative h-72 w-80 flex-shrink-0 snap-center overflow-hidden rounded-2xl border border-accent-gray bg-white shadow-lg sm:h-80 sm:w-96"
+                className="relative h-72 w-80 flex-shrink-0 snap-center overflow-hidden rounded-2xl border border-white/20 shadow-lg sm:h-80 sm:w-96"
               >
                 <Image
                   src={img.src}
@@ -78,7 +78,7 @@ export default function GalleryCarousel() {
           <button
             type="button"
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-accent-gray bg-white/95 text-secondary shadow-lg transition hover:bg-primary hover:text-white hover:border-primary sm:-left-4"
+            className="absolute left-0 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-primary shadow-lg transition hover:bg-primary hover:text-secondary hover:border-primary sm:-left-4"
             aria-label="Anterior"
           >
             <ChevronLeft className="h-6 w-6" />
@@ -86,7 +86,7 @@ export default function GalleryCarousel() {
           <button
             type="button"
             onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-accent-gray bg-white/95 text-secondary shadow-lg transition hover:bg-primary hover:text-white hover:border-primary sm:-right-4"
+            className="absolute right-0 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-primary shadow-lg transition hover:bg-primary hover:text-secondary hover:border-primary sm:-right-4"
             aria-label="Siguiente"
           >
             <ChevronRight className="h-6 w-6" />

@@ -29,11 +29,11 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-accent-gray bg-accent-white/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-secondary/95 backdrop-blur-sm">
       <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-4 sm:h-16 sm:gap-4 sm:px-6 lg:px-8">
         <button
           type="button"
-          className="rounded p-2 text-secondary md:hidden"
+          className="rounded p-2 text-white md:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Abrir menú"
         >
@@ -48,7 +48,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-lg font-medium text-secondary/90 transition hover:text-primary-dark"
+              className="text-lg font-medium text-white/90 transition hover:text-primary"
             >
               {t(link.key)}
             </Link>
@@ -61,7 +61,7 @@ export default function Header() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full p-2 text-secondary transition hover:text-primary-dark"
+            className="rounded-full p-2 text-white transition hover:text-primary"
             aria-label="Instagram Agro SouthWest"
           >
             <Instagram className="h-5 w-5" />
@@ -75,14 +75,14 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden border-t border-accent-gray bg-accent-white md:hidden"
+            className="overflow-hidden border-t border-white/10 bg-secondary md:hidden"
           >
             <nav className="flex flex-col gap-1 px-4 py-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-secondary hover:bg-accent-gray"
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-white hover:bg-white/10"
                   onClick={() => setOpen(false)}
                 >
                   {t(link.key)}
@@ -92,7 +92,7 @@ export default function Header() {
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-secondary"
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-white"
                 onClick={() => setOpen(false)}
               >
                 <Instagram className="h-5 w-5" />

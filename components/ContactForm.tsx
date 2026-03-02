@@ -39,7 +39,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contacto" className="bg-accent-gray py-14 sm:py-20">
+    <section id="contacto" className="bg-secondary py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center"
@@ -47,13 +47,13 @@ export default function ContactForm() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary-dark">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             {t("contact.label")}
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("contact.title")}
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-secondary/80">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-white/85">
             {t("contact.description")}
           </p>
         </motion.div>
@@ -65,20 +65,20 @@ export default function ContactForm() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl border border-accent-gray bg-white p-8 shadow-sm">
-              <h3 className="text-lg font-semibold text-secondary">
+            <div className="rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm">
+              <h3 className="text-lg font-semibold text-white">
                 {t("footer.contact")}
               </h3>
               <ul className="mt-6 space-y-4">
-                <li className="flex items-start gap-3 text-secondary/80">
-                  <MapPin className="h-5 w-5 flex-shrink-0 text-primary-dark mt-0.5" />
+                <li className="flex items-start gap-3 text-white/80">
+                  <MapPin className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
                   <div>
-                    <p className="font-medium text-secondary">{t("contact.office")}</p>
+                    <p className="font-medium text-white">{t("contact.office")}</p>
                     <a
                       href={GOOGLE_MAPS_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-primary-dark underline"
+                      className="hover:text-primary underline"
                     >
                       {t("contact.address")}
                     </a>
@@ -87,27 +87,27 @@ export default function ContactForm() {
                         href={GOOGLE_MAPS_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-primary-dark hover:underline"
+                        className="text-sm text-primary hover:underline"
                       >
                         {t("contact.viewOnMap")}
                       </a>
                     </p>
                   </div>
                 </li>
-                <li className="flex items-center gap-3 text-secondary/80">
-                  <Mail className="h-5 w-5 flex-shrink-0 text-primary-dark" />
+                <li className="flex items-center gap-3 text-white/80">
+                  <Mail className="h-5 w-5 flex-shrink-0 text-primary" />
                   <a
                     href="mailto:contacto@agrosouthwest.com"
-                    className="hover:text-primary-dark"
+                    className="hover:text-primary"
                   >
                     contacto@agrosouthwest.com
                   </a>
                 </li>
-                <li className="flex items-center gap-3 text-secondary/80">
-                  <Phone className="h-5 w-5 flex-shrink-0 text-primary-dark" />
+                <li className="flex items-center gap-3 text-white/80">
+                  <Phone className="h-5 w-5 flex-shrink-0 text-primary" />
                   <a
                     href="tel:+56974265206"
-                    className="hover:text-primary-dark"
+                    className="hover:text-primary"
                   >
                     +56 9 7426 5206
                   </a>
@@ -124,13 +124,13 @@ export default function ContactForm() {
           >
             <form
               onSubmit={handleSubmit}
-              className="rounded-2xl border border-accent-gray bg-white p-8 shadow-sm"
+              className="rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm"
             >
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-secondary"
+                    className="block text-sm font-medium text-white"
                   >
                     {t("contact.name")}
                   </label>
@@ -139,13 +139,13 @@ export default function ContactForm() {
                     name="name"
                     type="text"
                     required
-                    className="mt-1 w-full rounded-lg border border-accent-gray bg-accent-white px-4 py-2.5 text-secondary focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                    className="mt-1 w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-white placeholder:text-white/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-secondary"
+                    className="block text-sm font-medium text-white"
                   >
                     {t("contact.email")}
                   </label>
@@ -154,14 +154,14 @@ export default function ContactForm() {
                     name="email"
                     type="email"
                     required
-                    className="mt-1 w-full rounded-lg border border-accent-gray bg-accent-white px-4 py-2.5 text-secondary focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                    className="mt-1 w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-white placeholder:text-white/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                   />
                 </div>
               </div>
               <div className="mt-6">
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-secondary"
+                  className="block text-sm font-medium text-white"
                 >
                   {t("contact.message")}
                 </label>
@@ -170,17 +170,17 @@ export default function ContactForm() {
                   name="message"
                   rows={4}
                   required
-                  className="mt-1 w-full rounded-lg border border-accent-gray bg-accent-white px-4 py-2.5 text-secondary focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                  className="mt-1 w-full rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-white placeholder:text-white/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                 />
               </div>
               <div className="mt-6 flex items-center justify-between">
-                <p className="text-sm text-secondary/70">
+                <p className="text-sm text-white/70">
                   {t("contact.quoteHint")}
                 </p>
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-secondary shadow-sm transition hover:bg-primary-dark disabled:opacity-70"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-secondary shadow-sm transition hover:bg-primary-light disabled:opacity-70"
                 >
                   {status === "sending" ? (
                     t("contact.sending")
@@ -193,12 +193,12 @@ export default function ContactForm() {
                 </button>
               </div>
               {status === "done" && (
-                <p className="mt-4 text-sm text-green-600">
+                <p className="mt-4 text-sm text-primary">
                   {t("contact.success")}
                 </p>
               )}
               {status === "error" && (
-                <p className="mt-4 text-sm text-red-600">
+                <p className="mt-4 text-sm text-red-400">
                   {t("contact.error")}
                 </p>
               )}
@@ -213,17 +213,17 @@ export default function ContactForm() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="rounded-2xl border border-accent-gray overflow-hidden bg-white shadow-sm">
-            <div className="flex items-center justify-between gap-4 border-b border-accent-gray bg-accent-gray/30 px-4 py-3">
+          <div className="rounded-2xl border border-white/20 overflow-hidden bg-white/5 shadow-sm">
+            <div className="flex items-center justify-between gap-4 border-b border-white/20 bg-white/5 px-4 py-3">
               <div className="flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-primary-dark" />
-                <span className="font-semibold text-secondary">{t("contact.office")}</span>
+                <MapPin className="h-5 w-5 text-primary" />
+                <span className="font-semibold text-white">{t("contact.office")}</span>
               </div>
               <a
                 href={GOOGLE_MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-primary-dark hover:underline"
+                className="text-sm font-medium text-primary hover:underline"
               >
                 {t("contact.viewOnMap")}
               </a>
@@ -241,7 +241,7 @@ export default function ContactForm() {
                 className="h-full w-full"
               />
             </div>
-            <p className="px-4 py-2 text-sm text-secondary/80">
+            <p className="px-4 py-2 text-sm text-white/80">
               {t("contact.address")}
             </p>
           </div>

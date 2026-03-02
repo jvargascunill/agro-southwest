@@ -28,16 +28,16 @@ const specKeys = [
 export default function ProductSpecs() {
   const { t } = useLanguage();
   return (
-    <section id="productos" className="bg-accent-gray py-14 sm:py-20">
+    <section id="productos" className="bg-secondary py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
-          <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("product.title")}
           </h2>
         </motion.div>
 
         <motion.div
-          className="mx-auto mt-14 max-w-5xl rounded-2xl border border-accent-gray bg-white overflow-hidden shadow-lg"
+          className="mx-auto mt-14 max-w-5xl rounded-2xl border border-white/20 bg-white/5 overflow-hidden shadow-lg backdrop-blur-sm"
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
@@ -45,14 +45,14 @@ export default function ProductSpecs() {
         >
           <div className="p-6 sm:p-8 md:p-10">
             {/* Título arriba, ancho completo */}
-            <h3 className="mb-6 text-2xl font-bold text-secondary sm:mb-8 sm:text-3xl">
+            <h3 className="mb-6 text-2xl font-bold text-white sm:mb-8 sm:text-3xl">
               {t("product.cardTitle")}
             </h3>
             {/* Fila: foto a la izquierda del marco principal, tarjetas a la derecha */}
             <div className="flex flex-row items-stretch overflow-x-auto">
               {/* Foto a la izquierda; altura entre primera y última tarjeta */}
               <div className="flex min-w-[45%] flex-1 items-stretch justify-center pr-4 md:pr-8">
-                <div className="relative h-full min-h-[340px] w-full overflow-hidden rounded-xl border-2 border-accent-gray bg-accent-white shadow-md sm:min-h-[380px] md:min-h-0">
+                <div className="relative h-full min-h-[340px] w-full overflow-hidden rounded-xl border-2 border-white/20 shadow-md sm:min-h-[380px] md:min-h-0">
                   <Image
                     src="/foto-limon.jpg"
                     alt="Limones en árbol - Agro South West"
@@ -69,16 +69,16 @@ export default function ProductSpecs() {
                   {specKeys.map(({ icon: Icon, labelKey, valueKey }) => (
                     <div
                       key={labelKey}
-                      className="flex items-start gap-4 rounded-xl bg-accent-white p-4"
+                      className="flex items-start gap-4 rounded-xl bg-white/5 p-4 border border-white/10"
                     >
-                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary-dark">
+                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
                         <Icon className="h-6 w-6" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-secondary/70">
+                        <p className="text-sm font-medium text-white/70">
                           {t(labelKey)}
                         </p>
-                        <p className="text-lg font-semibold text-secondary">
+                        <p className="text-lg font-semibold text-white">
                           {t(valueKey)}
                         </p>
                       </div>
@@ -88,10 +88,10 @@ export default function ProductSpecs() {
               </div>
             </div>
             {/* Texto de variedad debajo de la fila tarjetas + foto */}
-            <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-accent-gray pt-8">
-              <div className="flex items-center gap-2 rounded-full bg-primary/15 px-4 py-2">
-                <Sparkles className="h-5 w-5 text-primary-dark" />
-                <span className="text-sm font-medium text-secondary">
+            <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-white/20 pt-8">
+              <div className="flex items-center gap-2 rounded-full bg-primary/20 px-4 py-2">
+                <Sparkles className="h-5 w-5 text-primary" />
+                <span className="text-sm font-medium text-white">
                   {t("product.skin")}
                 </span>
               </div>

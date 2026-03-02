@@ -19,14 +19,13 @@ html {
 }
 
 body {
-  @apply bg-accent-white font-sans font-normal text-secondary;
+  @apply bg-secondary font-sans font-normal text-white;
 }
 
 
 /* Section label: small caps, brand color */
 .section-label {
-  
-  @apply text-sm font-semibold uppercase tracking-widest text-primary-dark;
+  @apply text-sm font-semibold uppercase tracking-widest text-primary;
 }
 
 /* Ocultar scrollbar en carrusel manteniendo scroll */

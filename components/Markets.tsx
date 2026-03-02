@@ -82,13 +82,13 @@ const markets = [
 export default function Markets() {
   const { t } = useLanguage();
   return (
-    <section id="mercados" className="bg-accent-white py-14 sm:py-20">
+    <section id="mercados" className="bg-secondary py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
-          <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("markets.title")}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-secondary/80">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/85">
             {t("markets.description")}
           </p>
         </motion.div>
@@ -99,16 +99,16 @@ export default function Markets() {
           return (
             <motion.div
               key={market.name}
-              className="flex flex-col items-center rounded-2xl border border-accent-gray bg-white p-8 shadow-sm transition hover:border-primary/30 hover:shadow-md"
+              className="flex flex-col items-center rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm transition hover:border-primary/40 hover:shadow-md"
               {...fadeIn}
             >
-              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-primary/20 text-primary-dark">
+              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-primary/20 text-primary">
                 <Icon className={market.isFlag ? "h-8 w-8" : "h-7 w-7"} />
               </div>
-              <h3 className="mt-4 text-xl font-semibold text-secondary">
+              <h3 className="mt-4 text-xl font-semibold text-white">
                 {market.name}
               </h3>
-              <p className="mt-1 flex items-center gap-1.5 text-sm text-secondary/70">
+              <p className="mt-1 flex items-center gap-1.5 text-sm text-white/80">
                 <MapPin className="h-4 w-4" />
                 {t(market.modeKey)}
               </p>
@@ -118,10 +118,10 @@ export default function Markets() {
         </div>
 
         <motion.div
-          className="mt-12 flex flex-wrap items-center justify-center rounded-xl border border-accent-gray bg-accent-gray/50 px-6 py-4"
+          className="mt-12 flex flex-wrap items-center justify-center rounded-xl border border-white/20 bg-white/5 px-6 py-4"
           {...fadeIn}
         >
-          <span className="text-sm font-medium text-secondary/80">
+          <span className="text-sm font-medium text-white/85">
             {t("markets.terrestrial")}
           </span>
         </motion.div>

@@ -31,7 +31,7 @@ export default function LanguageSwitcher() {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 rounded-lg border border-accent-gray bg-white px-3 py-2 text-sm font-medium text-secondary hover:bg-accent-gray/50"
+        className="flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm font-medium text-white hover:bg-white/20"
         aria-label="Cambiar idioma"
         aria-expanded={open}
       >
@@ -51,8 +51,8 @@ export default function LanguageSwitcher() {
                   setLocale(l.code);
                   setOpen(false);
                 }}
-                className={`block w-full px-4 py-2 text-left text-sm hover:bg-accent-gray/50 ${
-                  locale === l.code ? "bg-primary/10 font-medium text-primary-dark" : "text-secondary"
+                className={`block w-full px-4 py-2 text-left text-sm hover:bg-white/10 ${
+                  locale === l.code ? "bg-primary/20 font-medium text-primary" : "text-white"
                 }`}
               >
                 {l.label}

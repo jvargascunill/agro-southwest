@@ -47,7 +47,7 @@ export default function InstagramSection() {
   return (
     <section
       id="instagram"
-      className="bg-accent-white py-14 sm:py-20"
+      className="bg-secondary py-14 sm:py-20"
     >
       {hasPosts && (
         <Script
@@ -58,14 +58,14 @@ export default function InstagramSection() {
       )}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
-          <div className="inline-flex items-center justify-center gap-2 rounded-full bg-primary/15 px-4 py-1.5 text-sm font-medium text-primary-dark">
+          <div className="inline-flex items-center justify-center gap-2 rounded-full bg-primary/20 px-4 py-1.5 text-sm font-medium text-primary">
             <Instagram className="h-4 w-4" />
             {t("instagram.follow")}
           </div>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("instagram.title")}
           </h2>
-          <p className="mx-auto mt-2 max-w-md text-lg text-secondary/80">
+          <p className="mx-auto mt-2 max-w-md text-lg text-white/85">
             {t("instagram.description")}
           </p>
         </motion.div>
@@ -77,30 +77,30 @@ export default function InstagramSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="overflow-hidden rounded-2xl border border-accent-gray bg-white shadow-lg">
+          <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/5 shadow-lg backdrop-blur-sm">
             <div className="grid sm:grid-cols-5">
-              <div className="flex flex-col justify-center gap-6 bg-accent-gray/30 p-8 sm:col-span-2">
+              <div className="flex flex-col justify-center gap-6 bg-white/5 p-8 sm:col-span-2">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary/30 to-primary/10 text-primary-dark">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary/30 to-primary/10 text-primary">
                     <Instagram className="h-8 w-8" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-secondary/70">
+                    <p className="text-sm font-medium text-white/70">
                       {t("instagram.profile")}
                     </p>
-                    <p className="text-xl font-bold text-secondary">
+                    <p className="text-xl font-bold text-white">
                       @{INSTAGRAM_USER}
                     </p>
                   </div>
                 </div>
-                <p className="text-sm text-secondary/80">
+                <p className="text-sm text-white/80">
                   Limones frescos, campo chileno y novedades de Agro SouthWest.
                 </p>
                 <a
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-secondary shadow-sm transition hover:bg-primary-dark"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-secondary shadow-sm transition hover:bg-primary-light"
                 >
                   {t("instagram.verPerfil")}
                   <ExternalLink className="h-4 w-4" />
@@ -141,11 +141,11 @@ export default function InstagramSection() {
                         href={INSTAGRAM_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="aspect-square rounded-lg bg-secondary/10 transition hover:bg-primary/20"
+                        className="aspect-square rounded-lg bg-white/10 transition hover:bg-primary/20"
                         aria-label={`Ver publicación en Instagram ${i + 1}`}
                       >
                         <div className="flex h-full w-full items-center justify-center">
-                          <Instagram className="h-8 w-8 text-secondary/40 sm:h-10 sm:w-10" />
+                          <Instagram className="h-8 w-8 text-white/40 sm:h-10 sm:w-10" />
                         </div>
                       </a>
                     ))}
@@ -156,16 +156,16 @@ export default function InstagramSection() {
           </div>
 
           {!showRealFeed && (
-            <p className="mt-4 text-center text-sm text-secondary/60">
+            <p className="mt-4 text-center text-sm text-white/60">
               Para mostrar fotos reales: en{" "}
-              <code className="rounded bg-accent-gray px-1 py-0.5 text-xs">
+              <code className="rounded bg-white/10 px-1 py-0.5 text-xs">
                 components/InstagramSection.tsx
               </code>{" "}
               usa <strong>Opción A</strong> (pega 3–6 URLs de posts) o <strong>Opción B</strong> (URL de widget de Elfsight / SnapWidget).
             </p>
           )}
           {showRealFeed && !hasWidget && (
-            <p className="mt-4 text-center text-sm text-secondary/60">
+            <p className="mt-4 text-center text-sm text-white/60">
               Haz clic en cualquier publicación para verla en Instagram.
             </p>
           )}

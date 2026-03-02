@@ -27,8 +27,8 @@ export function TeamCard({
   fallbackInitials: string;
 }) {
   return (
-    <div className="flex min-w-0 max-w-2xl flex-col overflow-hidden rounded-2xl border border-accent-gray bg-white p-8 shadow-sm md:flex-row md:items-start md:gap-8 md:text-left">
-      <div className="relative mx-auto h-52 w-40 flex-shrink-0 overflow-hidden rounded-lg bg-accent-gray md:mx-0">
+    <div className="flex min-w-0 max-w-2xl flex-col overflow-hidden rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm md:flex-row md:items-start md:gap-8 md:text-left">
+      <div className="relative mx-auto h-52 w-40 flex-shrink-0 overflow-hidden rounded-lg border border-white/20 md:mx-0">
         <Image
           src={imageSrc}
           alt={imageAlt}
@@ -43,7 +43,7 @@ export function TeamCard({
           }}
         />
         <span
-          className="absolute inset-0 hidden items-center justify-center text-2xl font-bold text-secondary/60"
+          className="absolute inset-0 hidden items-center justify-center text-2xl font-bold text-white/60"
           style={{ display: "none" }}
           aria-hidden
         >
@@ -51,9 +51,9 @@ export function TeamCard({
         </span>
       </div>
       <div className="mt-6 w-full min-w-0 flex-1 text-left md:mt-0">
-        <h3 className="text-xl font-semibold text-secondary">{name}</h3>
-        <p className="mt-1 text-sm font-medium text-primary-dark">{role}</p>
-        <p className="mt-4 break-words text-secondary/80">{bio}</p>
+        <h3 className="text-xl font-semibold text-white">{name}</h3>
+        <p className="mt-1 text-sm font-medium text-primary">{role}</p>
+        <p className="mt-4 break-words text-white/80">{bio}</p>
       </div>
     </div>
   );
