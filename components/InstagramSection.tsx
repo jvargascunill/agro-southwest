@@ -65,7 +65,7 @@ export default function InstagramSection() {
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("instagram.title")}
           </h2>
-          <p className="mx-auto mt-2 max-w-md text-lg text-white/85">
+          <p className="mx-auto mt-2 max-w-3xl text-lg leading-loose text-white/85">
             {t("instagram.description")}
           </p>
         </motion.div>
