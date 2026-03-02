@@ -2,6 +2,7 @@ import IntroSplash from "@/components/IntroSplash";
 import Hero from "@/components/Hero";
 import AboutUs from "@/components/AboutUs";
 import ProductSpecs from "@/components/ProductSpecs";
+import GalleryCarousel from "@/components/GalleryCarousel";
 import Markets from "@/components/Markets";
 import Certifications from "@/components/Certifications";
 import TestimonialSection from "@/components/TestimonialSection";
@@ -18,6 +19,7 @@ export default function Home() {
       <AboutUs />
       <Certifications />
       <ProductSpecs />
+      <GalleryCarousel />
       <Markets />
       <TestimonialSection />
       <InstagramSection />

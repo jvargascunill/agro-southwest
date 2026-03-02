@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Lightbulb, Target, Users } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import GalleryCarousel from "@/components/GalleryCarousel";
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
@@ -78,10 +77,6 @@ export default function AboutUs() {
             </div>
           </motion.div>
         </div>
-      </div>
-
-      <div className="mt-10">
-        <GalleryCarousel />
       </div>
     </section>
   );
