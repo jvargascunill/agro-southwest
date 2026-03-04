@@ -9,7 +9,6 @@ import TestimonialSection from "@/components/TestimonialSection";
 import InstagramSection from "@/components/InstagramSection";
 import ContactForm from "@/components/ContactForm";
 import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
 
 export default function Home() {
   return (
@@ -24,7 +23,6 @@ export default function Home() {
       <TestimonialSection />
       <InstagramSection />
       <FAQSection />
-      <CTASection />
       <ContactForm />
     </>
   );

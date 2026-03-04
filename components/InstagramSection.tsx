@@ -58,16 +58,9 @@ export default function InstagramSection() {
       )}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" {...fadeIn}>
-          <div className="inline-flex items-center justify-center gap-2 rounded-full bg-primary/20 px-4 py-1.5 text-sm font-medium text-primary">
-            <Instagram className="h-4 w-4" />
-            {t("instagram.follow")}
-          </div>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("instagram.title")}
           </h2>
-          <p className="mx-auto mt-2 max-w-md text-lg leading-loose text-white/85 md:max-w-7xl">
-            {t("instagram.description")}
-          </p>
         </motion.div>
 
         <motion.div

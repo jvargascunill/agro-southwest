@@ -138,12 +138,13 @@ export default function TestimonialSection() {
               fallbackInitials="JVC"
             />
             <TeamCard
-              imageSrc="/team/felipe-zurita.png?v=2"
+              imageSrc="/team/felipe-zurita.png?v=3"
               imageAlt={t("about.felipeName")}
               name={t("about.felipeName")}
               role={t("about.felipeRole")}
               bio={t("about.felipeBio")}
               fallbackInitials="FZ"
+              imagePosition="50% 20%"
             />
           </div>
         </motion.div>

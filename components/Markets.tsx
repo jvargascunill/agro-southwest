@@ -116,15 +116,6 @@ export default function Markets() {
           );
         })}
         </div>
-
-        <motion.div
-          className="mt-12 flex flex-wrap items-center justify-center rounded-xl border border-white/20 bg-white/5 px-6 py-4"
-          {...fadeIn}
-        >
-          <span className="text-sm font-medium text-white/85">
-            {t("markets.terrestrial")}
-          </span>
-        </motion.div>
       </div>
     </section>
   );

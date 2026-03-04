@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Send, Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -47,15 +48,26 @@ export default function ContactForm() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            {t("contact.label")}
-          </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("contact.title")}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg leading-loose text-white/85 md:max-w-7xl">
             {t("contact.description")}
           </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="#formulario-cotizacion"
+              className="rounded-full bg-primary px-8 py-4 text-base font-semibold text-secondary shadow-lg transition hover:bg-primary-light hover:shadow-xl"
+            >
+              {t("cta.button")}
+            </Link>
+            <a
+              href="mailto:contacto@agrosouthwest.com"
+              className="rounded-full border-2 border-white/60 px-8 py-4 text-base font-semibold text-white transition hover:bg-white/10"
+            >
+              contacto@agrosouthwest.com
+            </a>
+          </div>
         </motion.div>
 
         <div className="mx-auto mt-12 grid max-w-5xl gap-12 lg:grid-cols-5">
@@ -123,8 +135,9 @@ export default function ContactForm() {
             viewport={{ once: true }}
           >
             <form
+              id="formulario-cotizacion"
               onSubmit={handleSubmit}
-              className="rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm"
+              className="rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm scroll-mt-24"
             >
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>

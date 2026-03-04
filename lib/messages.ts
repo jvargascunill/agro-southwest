@@ -38,7 +38,7 @@ export const messages: Record<Locale, Record<string, string>> = {
     "about.javierRole": "Socio fundador",
     "about.javierBio": "Arquitecto de profesión, con estudios en comercio exterior, internacionalización y exportación para empresas. Experiencia en gestión y desarrollo de exportación agrícola, orientado a un servicio de calidad.",
     "about.felipeName": "Felipe Eduardo Zurita Castro",
-    "about.felipeRole": "Ingeniero Agrícola",
+    "about.felipeRole": "Grower Manager",
     "about.felipeBio": "Ingeniero Agrícola. Experiencia en control de calidad e inocuidad en la industria frutícola (Decofrut, Saniglobal, Frutícola Olmué). Enfocado en trazabilidad, aseguramiento de calidad y procesos de exportación.",
     "product.label": "Producto estrella",
     "product.title": "Productos",

@@ -18,6 +18,7 @@ export function TeamCard({
   role,
   bio,
   fallbackInitials,
+  imagePosition,
 }: {
   imageSrc: string;
   imageAlt: string;
@@ -25,6 +26,7 @@ export function TeamCard({
   role: string;
   bio: string;
   fallbackInitials: string;
+  imagePosition?: string;
 }) {
   return (
     <div className="flex min-w-0 max-w-2xl flex-col overflow-hidden rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm md:flex-row md:items-start md:gap-8 md:text-left">
@@ -34,6 +36,7 @@ export function TeamCard({
           alt={imageAlt}
           fill
           className="object-cover"
+          style={imagePosition ? { objectPosition: imagePosition } : undefined}
           sizes="160px"
           onError={(e) => {
             const target = e.currentTarget;
@@ -84,12 +87,13 @@ export default function TeamSection() {
             </motion.div>
             <motion.div {...fadeIn}>
               <TeamCard
-                imageSrc="/team/felipe-zurita.png?v=2"
+                imageSrc="/team/felipe-zurita.png?v=3"
                 imageAlt={t("about.felipeName")}
                 name={t("about.felipeName")}
                 role={t("about.felipeRole")}
                 bio={t("about.felipeBio")}
                 fallbackInitials="FZ"
+                imagePosition="50% 20%"
               />
             </motion.div>
           </div>
