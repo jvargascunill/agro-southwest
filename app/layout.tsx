@@ -31,10 +31,10 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/flavicon.png?v=2", type: "image/png", sizes: "32x32" },
-      { url: "/flavicon.png?v=2", type: "image/png", sizes: "192x192" },
+      { url: "/flavicon.png?v=3", type: "image/png", sizes: "32x32" },
+      { url: "/flavicon.png?v=3", type: "image/png", sizes: "192x192" },
     ],
-    apple: "/flavicon.png?v=2",
+    apple: "/flavicon.png?v=3",
   },
   openGraph: {
     title: SEO_TITLE_SHORT,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     locale: "es_CL",
     images: [
       {
-        url: `${SITE_URL}/flavicon.png?v=2`,
+        url: `${SITE_URL}/flavicon.png?v=3`,
         width: 512,
         height: 512,
         alt: "Agro South West - Cítricos de Chile para el mundo",
@@ -136,7 +136,7 @@ export default function RootLayout({
         "@type": "LocalBusiness",
         "@id": `${SITE_URL}#localbusiness`,
         name: SEO_SITE_NAME,
-        image: `${SITE_URL}/flavicon.png`,
+        image: `${SITE_URL}/flavicon.png?v=3`,
         url: SITE_URL,
         telephone: "+56974265206",
         email: "contacto@agrosouthwest.com",
