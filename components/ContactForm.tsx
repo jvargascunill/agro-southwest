@@ -73,12 +73,12 @@ export default function ContactForm() {
         {/* Desktop: fila 1 = Oficina | Mapa, fila 2 = Formulario. Móvil: Oficina, Formulario, Mapa */}
         <div className="mx-auto mt-12 grid max-w-5xl gap-12 lg:grid-cols-2">
           <motion.div
-            className="order-1"
+            className="order-1 lg:flex lg:items-stretch"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm lg:min-h-[320px]">
+            <div className="w-full rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm lg:min-h-0 lg:h-full">
               <h3 className="text-lg font-semibold text-white">
                 {t("footer.contact")}
               </h3>
@@ -131,13 +131,13 @@ export default function ContactForm() {
 
           {/* Burbuja mapa: desktop a la derecha de Oficina, móvil debajo del formulario */}
           <motion.div
-            className="order-3 lg:order-2"
+            className="order-3 lg:order-2 lg:flex lg:items-stretch"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl border border-white/20 overflow-hidden bg-white/5 shadow-sm">
-              <div className="flex items-center justify-between gap-4 border-b border-white/20 bg-white/5 px-4 py-3">
+            <div className="flex h-full w-full flex-col rounded-2xl border border-white/20 overflow-hidden bg-white/5 shadow-sm lg:min-h-0">
+              <div className="flex shrink-0 items-center justify-between gap-4 border-b border-white/20 bg-white/5 px-4 py-3">
                 <div className="flex items-center gap-2">
                   <MapPin className="h-5 w-5 text-primary" />
                   <span className="font-semibold text-white">{t("contact.office")}</span>
@@ -151,7 +151,7 @@ export default function ContactForm() {
                   {t("contact.viewOnMap")}
                 </a>
               </div>
-              <div className="aspect-[16/9] w-full min-h-[240px]">
+              <div className="min-h-[240px] flex-1 lg:min-h-0">
                 <iframe
                   title={t("contact.office")}
                   src={GOOGLE_MAPS_EMBED}
@@ -164,7 +164,7 @@ export default function ContactForm() {
                   className="h-full w-full"
                 />
               </div>
-              <p className="px-4 py-2 text-sm text-white/80">
+              <p className="shrink-0 px-4 py-2 text-sm text-white/80">
                 {t("contact.address")}
               </p>
             </div>
