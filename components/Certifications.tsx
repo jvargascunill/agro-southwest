@@ -26,9 +26,6 @@ export default function Certifications() {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("certs.title")}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg leading-loose text-white/85 md:max-w-7xl">
-            {t("certs.description")}
-          </p>
         </motion.div>
 
         <div className="mt-14 grid gap-8 md:grid-cols-3 md:items-stretch">
@@ -50,6 +47,13 @@ export default function Certifications() {
             </motion.div>
           ))}
         </div>
+
+        <motion.p
+          className="mx-auto mt-14 max-w-2xl text-center text-lg leading-loose text-white/85 md:max-w-7xl"
+          {...fadeIn}
+        >
+          {t("certs.description")}
+        </motion.p>
       </div>
     </section>
   );

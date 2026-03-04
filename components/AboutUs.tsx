@@ -77,6 +77,13 @@ export default function AboutUs() {
             </div>
           </motion.div>
         </div>
+
+        <motion.p
+          className="mx-auto mt-14 max-w-4xl text-center text-base leading-loose text-white/90 sm:text-lg md:max-w-7xl"
+          {...fadeIn}
+        >
+          {t("hero.description")}
+        </motion.p>
       </div>
     </section>
   );

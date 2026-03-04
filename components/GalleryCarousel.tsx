@@ -9,7 +9,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const CAROUSEL_IMAGES: { src: string; alt: string }[] = [
   { src: "/carousel/01.png", alt: "Agro South West - Campo y cítricos Chile" },
   { src: "/carousel/02.png", alt: "Agro South West - Cítricos frescos exportación" },
-  { src: "/carousel/03.png", alt: "Agro South West - Limones y naranjas Chile" },
+  { src: "/carousel/limones-verdes.png", alt: "Agro South West - Limones verdes y limón en árbol" },
+  { src: "/carousel/limones-amarillos.png", alt: "Agro South West - Limones amarillos en árbol" },
   { src: "/carousel/04.png", alt: "Agro South West - Proceso exportación cítricos" },
   { src: "/carousel/05.png", alt: "Agro South West - Fruta chilena premium" },
   { src: "/carousel/07.png", alt: "Galería Agro South West - Cítricos 7" },
