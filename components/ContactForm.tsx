@@ -78,7 +78,7 @@ export default function ContactForm() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm">
+            <div className="rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm lg:min-h-[320px]">
               <h3 className="text-lg font-semibold text-white">
                 {t("footer.contact")}
               </h3>
@@ -179,7 +179,7 @@ export default function ContactForm() {
             <form
               id="formulario-cotizacion"
               onSubmit={handleSubmit}
-              className="rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm scroll-mt-24"
+              className="rounded-2xl border border-white/20 bg-white/5 p-8 shadow-sm backdrop-blur-sm scroll-mt-24 lg:min-h-[320px]"
             >
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
