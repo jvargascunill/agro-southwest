@@ -25,10 +25,7 @@ export default function FAQSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            {t("faq.sectionLabel")}
-          </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("faq.title")}
           </h2>
         </motion.div>
