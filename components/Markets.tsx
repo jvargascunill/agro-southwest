@@ -88,9 +88,6 @@ export default function Markets() {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("markets.title")}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg leading-loose text-white/85 md:max-w-7xl">
-            {t("markets.description")}
-          </p>
         </motion.div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
@@ -116,6 +113,10 @@ export default function Markets() {
           );
         })}
         </div>
+
+        <motion.p className="mx-auto mt-10 max-w-2xl text-center text-lg leading-loose text-white/85 md:max-w-7xl" {...fadeIn}>
+          {t("markets.description")}
+        </motion.p>
       </div>
     </section>
   );
