@@ -17,7 +17,7 @@ export default function Hero() {
 
   return (
     <section
-      id="inicio"
+      id="hero"
       className="relative flex min-h-[90vh] w-full flex-col items-center justify-center overflow-hidden bg-secondary"
     >
       {/* Solo celular en vertical (portrait) */}

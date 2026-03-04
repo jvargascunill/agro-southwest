@@ -24,8 +24,11 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const { t } = useLanguage();
 
-  const goToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollToSection = (href: string) => {
+    const id = href.replace("#", "");
+    if (id) {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -48,6 +51,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
+              onClick={() => scrollToSection(link.href)}
               className="text-lg font-medium text-white/90 transition hover:text-primary"
             >
               {t(link.key)}
@@ -83,7 +87,10 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   className="rounded-lg px-3 py-2 text-sm font-medium text-white hover:bg-white/10"
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    scrollToSection(link.href);
+                    setOpen(false);
+                  }}
                 >
                   {t(link.key)}
                 </Link>

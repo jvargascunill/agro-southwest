@@ -12,6 +12,7 @@ export default function IntroSplash() {
 
   return (
     <section
+      id="inicio"
       className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-secondary"
       style={{ minHeight: "100vh" }}
       aria-label="Agro SouthWest"
