@@ -46,13 +46,13 @@ export default function Header() {
           <LanguageSwitcher />
         </div>
         <div className="hidden flex-1 md:block" />
-        <nav className="hidden flex-1 items-center justify-center gap-6 md:flex">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-4 overflow-x-auto scrollbar-hide md:flex lg:gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => scrollToSection(link.href)}
-              className="text-lg font-medium text-white/90 transition hover:text-primary"
+              className="shrink-0 whitespace-nowrap text-lg font-medium text-white/90 transition hover:text-primary [writing-mode:horizontal-tb]"
             >
               {t(link.key)}
             </Link>
@@ -86,7 +86,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-white hover:bg-white/10"
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-white hover:bg-white/10 whitespace-nowrap [writing-mode:horizontal-tb]"
                   onClick={() => {
                     scrollToSection(link.href);
                     setOpen(false);
