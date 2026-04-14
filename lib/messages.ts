@@ -1,4 +1,6 @@
-export type Locale = "es" | "en" | "zh" | "pt";
+import { jaMessages } from "./messages-ja";
+
+export type Locale = "es" | "en" | "zh" | "pt" | "ja";
 
 export const messages: Record<Locale, Record<string, string>> = {
   es: {
@@ -521,4 +523,5 @@ export const messages: Record<Locale, Record<string, string>> = {
     "footer.links": "Links",
     "footer.copyright": "© 2026 Agro SouthWest SpA. Todos os direitos reservados.",
   },
+  ja: jaMessages,
 };

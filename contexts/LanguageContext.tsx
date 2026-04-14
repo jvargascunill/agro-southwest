@@ -16,6 +16,7 @@ const LANG_ATTR: Record<Locale, string> = {
   en: "en",
   zh: "zh-Hans",
   pt: "pt-BR",
+  ja: "ja",
 };
 
 type LanguageContextType = {
@@ -38,7 +39,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY) as Locale | null;
-    if (stored && ["es", "en", "zh", "pt"].includes(stored)) {
+    if (stored && ["es", "en", "zh", "pt", "ja"].includes(stored)) {
       setLocaleState(stored);
     }
     setMounted(true);

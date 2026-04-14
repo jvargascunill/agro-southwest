@@ -9,6 +9,7 @@ const locales = [
   { code: "en" as const, label: "EN" },
   { code: "pt" as const, label: "PT" },
   { code: "zh" as const, label: "中文" },
+  { code: "ja" as const, label: "日本語" },
 ];
 
 export default function LanguageSwitcher() {
