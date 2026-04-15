@@ -46,18 +46,21 @@ export default function Header() {
           <LanguageSwitcher />
         </div>
         <div className="hidden flex-1 md:block" />
-        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-4 overflow-x-auto scrollbar-hide md:flex lg:gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => scrollToSection(link.href)}
-              className="shrink-0 whitespace-nowrap text-lg font-medium text-white/90 transition hover:text-primary [writing-mode:horizontal-tb]"
-            >
-              {t(link.key)}
-            </Link>
-          ))}
-        </nav>
+        {/* justify-start en el nav con scroll: si usamos justify-center en overflow, Inicio/Nosotros quedan fuera a la izquierda */}
+        <div className="hidden min-w-0 flex-1 items-center justify-center md:flex">
+          <nav className="flex max-w-full items-center justify-start gap-4 overflow-x-auto scrollbar-hide lg:gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => scrollToSection(link.href)}
+                className="shrink-0 whitespace-nowrap text-lg font-medium text-white/90 transition hover:text-primary [writing-mode:horizontal-tb]"
+              >
+                {t(link.key)}
+              </Link>
+            ))}
+          </nav>
+        </div>
 
         <div className="hidden flex-1 items-center justify-end gap-3 md:flex">
           <LanguageSwitcher />
