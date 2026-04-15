@@ -44,9 +44,10 @@ export default function Header() {
         <div className="flex flex-1 justify-end md:hidden">
           <LanguageSwitcher />
         </div>
-        {/* Un solo flex-1 al centro: antes había flex-1 a ambos lados y el menú quedaba ~1/3 del ancho y recortaba enlaces */}
-        <div className="hidden min-w-0 flex-1 items-center justify-center md:flex">
-          <nav className="flex max-w-full flex-wrap items-center justify-center gap-x-3 gap-y-2 px-1 sm:gap-x-4 lg:gap-x-6">
+        {/* Grid 1fr | auto | 1fr: mismo espacio a ambos lados del menú para centrarlo en la barra (los controles van en la tercera columna) */}
+        <div className="hidden min-w-0 flex-1 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-x-2 md:gap-y-2">
+          <div aria-hidden className="min-w-0" />
+          <nav className="flex max-w-full min-w-0 flex-wrap items-center justify-center gap-x-3 gap-y-2 px-1 sm:gap-x-4 lg:gap-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -58,19 +59,18 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-        </div>
-
-        <div className="hidden shrink-0 items-center justify-end gap-3 md:flex">
-          <LanguageSwitcher />
-          <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full p-2 text-white transition hover:text-primary"
-            aria-label="Instagram Agro SouthWest"
-          >
-            <Instagram className="h-5 w-5" />
-          </a>
+          <div className="flex min-w-0 items-center justify-end gap-3">
+            <LanguageSwitcher />
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full p-2 text-white transition hover:text-primary"
+              aria-label="Instagram Agro SouthWest"
+            >
+              <Instagram className="h-5 w-5" />
+            </a>
+          </div>
         </div>
       </div>
 
