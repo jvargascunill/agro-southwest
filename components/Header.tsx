@@ -16,7 +16,6 @@ const navLinks = [
   { href: "#productos", key: "nav.productos" },
   { href: "#mercados", key: "nav.mercados" },
   { href: "#instagram", key: "nav.instagram" },
-  { href: "#faq", key: "nav.faq" },
   { href: "#contacto", key: "nav.contacto" },
 ];
 
@@ -45,16 +44,15 @@ export default function Header() {
         <div className="flex flex-1 justify-end md:hidden">
           <LanguageSwitcher />
         </div>
-        <div className="hidden flex-1 md:block" />
-        {/* justify-start en el nav con scroll: si usamos justify-center en overflow, Inicio/Nosotros quedan fuera a la izquierda */}
+        {/* Un solo flex-1 al centro: antes había flex-1 a ambos lados y el menú quedaba ~1/3 del ancho y recortaba enlaces */}
         <div className="hidden min-w-0 flex-1 items-center justify-center md:flex">
-          <nav className="flex max-w-full items-center justify-start gap-4 overflow-x-auto scrollbar-hide lg:gap-6">
+          <nav className="flex max-w-full flex-wrap items-center justify-center gap-x-3 gap-y-2 px-1 sm:gap-x-4 lg:gap-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="shrink-0 whitespace-nowrap text-lg font-medium text-white/90 transition hover:text-primary [writing-mode:horizontal-tb]"
+                className="shrink-0 whitespace-nowrap text-base font-medium text-white/90 transition hover:text-primary [writing-mode:horizontal-tb] sm:text-lg"
               >
                 {t(link.key)}
               </Link>
@@ -62,7 +60,7 @@ export default function Header() {
           </nav>
         </div>
 
-        <div className="hidden flex-1 items-center justify-end gap-3 md:flex">
+        <div className="hidden shrink-0 items-center justify-end gap-3 md:flex">
           <LanguageSwitcher />
           <a
             href={INSTAGRAM_URL}
