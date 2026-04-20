@@ -18,15 +18,16 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[90vh] w-full flex-col items-center justify-center overflow-hidden bg-secondary"
+      className="relative flex min-h-[56vh] w-full flex-col items-center justify-center overflow-hidden bg-secondary md:min-h-[90vh]"
     >
-      {/* Solo celular en vertical (portrait) */}
+      {/* Solo celular en vertical (portrait): menos alto + preload ligero para que arranque antes */}
       <video
         ref={videoMobilePortraitRef}
         autoPlay
         loop
         muted
         playsInline
+        preload="metadata"
         className="absolute inset-0 hidden h-full w-full object-cover opacity-40 [@media(max-width:767px)_and_(orientation:portrait)]:block"
         aria-hidden
       >
