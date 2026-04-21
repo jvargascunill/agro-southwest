@@ -10,17 +10,22 @@ export default function IntroSplash() {
   const isMobilePortrait = useIsMobilePortrait();
   const backgroundImage = isMobilePortrait ? "url(/logo-inicio-mobile.png)" : "url(/hero-logo.png)";
 
+  const backgroundPosition = isMobilePortrait
+    ? "center 12%"
+    : "center 22%";
+
   return (
     <section
       id="inicio"
-      className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-secondary"
-      style={{ minHeight: "100vh" }}
+      className="relative flex min-h-screen w-full flex-col items-center overflow-hidden bg-secondary"
       aria-label="Agro SouthWest"
     >
       <motion.div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-no-repeat"
         style={{
           backgroundImage,
+          backgroundPosition,
+          backgroundSize: "cover",
         }}
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
