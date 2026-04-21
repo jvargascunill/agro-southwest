@@ -18,9 +18,9 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[56vh] w-full flex-col items-center justify-center overflow-hidden bg-secondary md:min-h-[90vh]"
+      className="relative flex min-h-[90vh] w-full flex-col items-center justify-center overflow-hidden bg-secondary"
     >
-      {/* Solo celular en vertical (portrait): menos alto + preload ligero para que arranque antes */}
+      {/* Solo celular en vertical (portrait); preload ligero para aligerar carga inicial */}
       <video
         ref={videoMobilePortraitRef}
         autoPlay
