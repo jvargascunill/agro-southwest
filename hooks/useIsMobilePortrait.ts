@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-const MOBILE_PORTRAIT = "(max-width: 768px) and (orientation: portrait)";
+/** Solo teléfono en vertical; tablets en portrait quedan fuera (misma vista que desktop). */
+const MOBILE_PORTRAIT = "(max-width: 480px) and (orientation: portrait)";
 
 /**
- * True cuando la vista es móvil en orientación vertical (primer slide usa imagen vertical).
+ * True en pantallas estrechas en vertical (p. ej. iPhone), no en tablet en portrait.
  * En servidor y antes de montar devuelve false para evitar hydration mismatch.
  */
 export function useIsMobilePortrait(): boolean {

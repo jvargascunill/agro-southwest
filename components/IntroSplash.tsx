@@ -1,18 +1,43 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobilePortrait } from "@/hooks/useIsMobilePortrait";
+
+/** Móvil horizontal o tablet (retrato o apaisado): bajar el arte hacia la zona del WhatsApp. Coma = OR en media queries. */
+const TABLET_OR_MOBILE_LANDSCAPE =
+  "(max-width: 1024px) and (orientation: landscape), (min-width: 481px) and (max-width: 1024px) and (orientation: portrait)";
 
 export default function IntroSplash() {
   const { t } = useLanguage();
   const isMobilePortrait = useIsMobilePortrait();
   const backgroundImage = isMobilePortrait ? "url(/logo-inicio-mobile.png)" : "url(/hero-logo.png)";
 
-  const backgroundPosition = isMobilePortrait
-    ? "center 12%"
-    : "center 22%";
+  const [backgroundPosition, setBackgroundPosition] = useState("center 22%");
+  const [tabletOrMobileLandscape, setTabletOrMobileLandscape] = useState(false);
+
+  useEffect(() => {
+    const mqPhonePortrait = window.matchMedia("(max-width: 480px) and (orientation: portrait)");
+    const mqTabletOrLandscape = window.matchMedia(TABLET_OR_MOBILE_LANDSCAPE);
+
+    const update = () => {
+      const tabletOrLand = mqTabletOrLandscape.matches;
+      setTabletOrMobileLandscape(tabletOrLand);
+      if (mqPhonePortrait.matches) setBackgroundPosition("center -10%");
+      else if (tabletOrLand) setBackgroundPosition("center 43%");
+      else setBackgroundPosition("center 22%");
+    };
+
+    update();
+    mqPhonePortrait.addEventListener("change", update);
+    mqTabletOrLandscape.addEventListener("change", update);
+    return () => {
+      mqPhonePortrait.removeEventListener("change", update);
+      mqTabletOrLandscape.removeEventListener("change", update);
+    };
+  }, []);
 
   return (
     <section
@@ -40,9 +65,12 @@ export default function IntroSplash() {
       />
 
       <motion.div
-        className="relative z-10 mt-auto flex flex-wrap items-center justify-center gap-4 pb-[calc(3.75rem+env(safe-area-inset-bottom,0px))]"
+        className="relative z-10 mt-auto flex flex-wrap items-center justify-center gap-4 pb-[calc(5.5rem+env(safe-area-inset-bottom,0px))] max-md:pb-[calc(6rem+env(safe-area-inset-bottom,0px))]"
         initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={{
+          opacity: 1,
+          y: tabletOrMobileLandscape ? "37.5%" : 0,
+        }}
         transition={{ duration: 0.6, delay: 0.8 }}
       >
         <Link
